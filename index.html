@@ -94,6 +94,10 @@
     0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
   }
+  @keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 </style>
 
 <div class="splash-screen">
@@ -107,8 +111,8 @@
 
 <section id="poems" style="display: none; opacity: 0; transition: opacity 0.4s ease; font-size: 1.4rem; font-weight: bold; color: #222; font-family: 'Inter', sans-serif; max-width: 800px; margin: 3rem auto; background: url('assets/poem-background.jpg') no-repeat center center/cover, rgba(255,255,255,0.85); padding: 2rem; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.1);">
   <button style="margin-bottom: 1rem; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; background-color: #444; color: #fff; font-weight: bold;" onclick="document.getElementById('poems').style.display='none'; document.querySelector('.splash-screen').style.display='flex';">← Back to Home</button>
-  <h2 style="color: darkblue; text-shadow: 1px 1px 0 white, -1px -1px 0 orange;">Hi</h2>
-  <p style="white-space: pre-line;">
+  <h2 style="font-size: 2.8rem; font-weight: bold; color: darkblue; text-shadow: 2px 2px 0 yellow, -2px -2px 0 orange, 2px -2px 0 orange, -2px 2px 0 yellow; animation: fadeInTitle 2s ease forwards; opacity: 0;">Hi</h2>
+  <p style="white-space: pre-line; font-weight: bold; color: darkblue; text-shadow: 1px 1px 0 black;">
     वो Hi कहके
     यू ही चले गए,
     दिल के दरवाजे पर दस्तक देकर
@@ -128,7 +132,7 @@
     <div style="text-align: right; font-style: italic; font-size: 1rem; margin-top: 1.5rem;">
       — Rohit<br>
       (6th April 2025)
-    </div>$1
+    </div>
 </section>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
