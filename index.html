@@ -8,23 +8,30 @@
     justify-content: flex-start;
     height: 100vh;
     background: url('assets/splash-background.jpg') no-repeat center center/cover;
-    color: #fff;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
+    font-size: 4.5rem;
     text-align: center;
     padding-top: 3rem;
+    font-weight: bold;
   }
 
   .splash-title {
     margin-top: 1rem;
-    font-size: 3rem;
+    font-size: 4.5rem;
+    color: red;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 orange, 2px -2px 0 orange, -2px 2px 0 white;
+    font-weight: bold;
   }
 
   .splash-subtitle {
-    font-size: 1.8rem;
+    font-size: 3rem;
     margin-top: 0.5rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Great Vibes', cursive;
+    color: purple;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 orange, 1px -1px 0 orange, -1px 1px 0 white;
+    font-weight: bold;
   }
 
   .splash-buttons {
@@ -35,22 +42,34 @@
   }
 
   .splash-buttons a {
-    padding: 0.8rem 1.5rem;
-    font-size: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 2.4rem;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 10px;
     transition: background-color 0.3s;
+    font-weight: bold;
+  }
+
+  .splash-buttons a[href="#blog"] {
+    background-color: lightblue;
+    color: darkmagenta;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
+  }
+
+  .splash-buttons a[href="#poems"] {
+    background-color: lightgreen;
+    color: darkblue;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
   }
 
   .splash-buttons a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0.9;
   }
 
   .main-cards, section, footer {
     display: none;
   }
+
   .animated-heart {
     display: inline-block;
     animation: heartbeat 1.5s infinite;
@@ -73,79 +92,10 @@
 </style>
 
 <div class="splash-screen">
-  <div class="splash-title">DIL SE<br><span class="animated-heart">❤️</span></div>
-  <div class="splash-subtitle" style="font-family: 'Great Vibes', cursive; font-size: 2rem;">The voice of my heart</div>
+  <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
+  <div class="splash-subtitle">The Voice of My Heart...</div>
   <div class="splash-buttons">
     <a href="#blog" class="card">Blogs</a>
     <a href="#poems" class="card">Poems</a>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const visibleSections = ["blog", "poems"];
-
-    document.querySelectorAll("section").forEach(section => {
-      if (!visibleSections.includes(section.id)) return;
-
-      const backButton = document.createElement("button");
-      backButton.textContent = "← Back to Home";
-      backButton.style.marginBottom = "1rem";
-      backButton.style.padding = "0.5rem 1rem";
-      backButton.style.border = "none";
-      backButton.style.borderRadius = "6px";
-      backButton.style.cursor = "pointer";
-      backButton.style.backgroundColor = "#444";
-      backButton.style.color = "#fff";
-      backButton.style.transition = "background-color 0.3s, transform 0.3s";
-
-      backButton.addEventListener("mouseover", () => {
-        backButton.style.backgroundColor = "#666";
-        backButton.style.transform = "scale(1.05)";
-      });
-
-      backButton.addEventListener("mouseout", () => {
-        backButton.style.backgroundColor = "#444";
-        backButton.style.transform = "scale(1)";
-      });
-
-      backButton.addEventListener("click", () => {
-        section.style.opacity = 0;
-        setTimeout(() => {
-          section.style.display = "none";
-          document.querySelector(".splash-screen").style.display = "flex";
-        }, 300);
-      });
-
-      section.style.transition = "opacity 0.4s ease";
-      section.insertBefore(backButton, section.firstChild);
-      section.style.display = "none";
-    });
-
-    document.querySelectorAll(".card").forEach(card => {
-      const targetId = card.getAttribute("href").substring(1);
-      if (!visibleSections.includes(targetId)) {
-        card.style.display = "none";
-        return;
-      }
-
-      card.addEventListener("click", e => {
-        e.preventDefault();
-        document.querySelector(".splash-screen").style.display = "none";
-        document.querySelectorAll("section").forEach(section => {
-          section.style.display = "none";
-          section.style.opacity = 0;
-        });
-        const section = document.getElementById(targetId);
-        section.style.display = "block";
-        setTimeout(() => {
-          section.style.opacity = 1;
-          section.scrollIntoView({ behavior: 'smooth' });
-        }, 50);
-      });
-    });
-
-    const footer = document.querySelector("footer") || document.createElement("footer");
-    footer.innerHTML += '<p>📧 rohitphy79@gmail.com | ☎️ +44 7721714024</p>';
-  });
-</script>
