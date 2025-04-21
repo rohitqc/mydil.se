@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIL SE - The Voice of My Heart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+  .splash-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background: url('assets/splash-background.jpg') no-repeat center center/cover;
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    text-align: center;
+    padding-top: 3rem;
+    font-weight: bold;
+  }
+
+  .splash-title {
+    margin-top: 1rem;
+    font-size: 4.5rem;
+    color: red;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 white, -2px -2px 0 orange, 2px -2px 0 orange, -2px 2px 0 white;
+    font-weight: bold;
+  }
+
+  .splash-subtitle {
+    font-size: 3rem;
+    margin-top: 0.5rem;
+    font-family: 'Great Vibes', cursive;
+    color: purple;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 orange, 1px -1px 0 orange, -1px 1px 0 white;
+    font-weight: bold;
+  }
+
+  .splash-buttons {
+    margin-top: auto;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .splash-buttons a {
+    padding: 1rem 2rem;
+    font-size: 2.4rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+
+  .splash-buttons a[href="#blog"] {
+    background-color: lightblue;
+    color: darkmagenta;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
+  }
+
+  .splash-buttons a[href="#poems"] {
+    background-color: lightgreen;
+    color: darkblue;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
+  }
+
+  .splash-buttons a:hover {
+    opacity: 0.9;
+  }
+
+  .main-cards, section, footer {
+    display: none;
+  }
+
+  .animated-heart {
+    display: inline-block;
+    animation: heartbeat 1.5s infinite, rainbowPulse 6s infinite linear;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.2);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes rainbowPulse {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
+</style>
+
+<div class="splash-screen">
+  <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
+  <div class="splash-subtitle">The Voice of My Heart...</div>
+  <div class="splash-buttons">
+    <a href="#blog" class="card">Blogs</a>
+    <a href="#poems" class="card">Poems</a>
+  </div>
+</div>
+
+<section id="poems" style="display: none; opacity: 0; transition: opacity 0.4s ease; font-size: 1.4rem; font-weight: bold; color: #222; font-family: 'Inter', sans-serif; max-width: 800px; margin: 3rem auto; background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.1);">
+  <button style="margin-bottom: 1rem; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; background-color: #444; color: #fff; font-weight: bold;" onclick="document.getElementById('poems').style.display='none'; document.querySelector('.splash-screen').style.display='flex';">← Back to Home</button>
+  <h2 style="color: darkblue; text-shadow: 1px 1px 0 white, -1px -1px 0 orange;">Hi</h2>
+  <p style="white-space: pre-line;">
+    वो Hi कहके
+    यू ही चले गए,
+    दिल के दरवाजे पर दस्तक देकर
+    न जाने कहा छुप गए।
+
+    अलफ्जों को जोड़कर
+    कुछ कहना चाहा था,
+    मुस्कुराकर देख उसे
+    नजरों से कुछ बया करना चाहा।
+
+    मुलाकात लफ्जों की होती,
+    इबादत दिल की होती,
+    उससे पहले ही वो,
+    लफ्जों को दिल में छुपाकर चले गए।
+    
+    — Rohit
+    
+    (6th April 2025)
+  </p>
+</section>
+
+</body>
+</html>
