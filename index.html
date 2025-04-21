@@ -1,189 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyDil | Career | Blog | Poems</title>
-  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js"></script>
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      const firebaseConfig = {
-        apiKey: "AIzaSyA2UmFZ4rrLd3kbcKBwkJjGhLtmivcKgFs",
-        authDomain: "i-love-physics-e0a99.firebaseapp.com",
-        projectId: "i-love-physics-e0a99",
-        storageBucket: "i-love-physics-e0a99.firebasestorage.app",
-        messagingSenderId: "74242332701",
-        appId: "1:74242332701:web:f35dc5cc0e17cd63dccef4"
-      };
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
+  .splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?sunset,sea,greenery') no-repeat center center/cover;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    text-align: center;
+  }
 
-      db.collection("careers").get().then((querySnapshot) => {
-        const careersSection = document.getElementById("career-list");
-        careersSection.innerHTML = "";
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          const li = document.createElement("li");
-          li.innerHTML = `<strong>${data.title}</strong> – ${data.description}`;
-          careersSection.appendChild(li);
-        });
+  .splash-screen h1 {
+    margin-bottom: 2rem;
+  }
+
+  .splash-buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .splash-buttons a {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+
+  .splash-buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .main-cards, section, footer {
+    display: none;
+  }
+</style>
+
+<div class="splash-screen">
+  <h1>Mydil.se - Voice of My Heart</h1>
+  <div class="splash-buttons">
+    <a href="#blog" class="card">Blogs</a>
+    <a href="#poems" class="card">Poems</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const visibleSections = ["blog", "poems"];
+
+    document.querySelectorAll("section").forEach(section => {
+      if (!visibleSections.includes(section.id)) return;
+
+      const backButton = document.createElement("button");
+      backButton.textContent = "← Back to Home";
+      backButton.style.marginBottom = "1rem";
+      backButton.style.padding = "0.5rem 1rem";
+      backButton.style.border = "none";
+      backButton.style.borderRadius = "6px";
+      backButton.style.cursor = "pointer";
+      backButton.style.backgroundColor = "#444";
+      backButton.style.color = "#fff";
+      backButton.style.transition = "background-color 0.3s, transform 0.3s";
+
+      backButton.addEventListener("mouseover", () => {
+        backButton.style.backgroundColor = "#666";
+        backButton.style.transform = "scale(1.05)";
       });
 
-      db.collection("blogs").get().then((querySnapshot) => {
-        const blogSection = document.getElementById("blog-posts");
-        blogSection.innerHTML = "";
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          const article = document.createElement("article");
-          article.innerHTML = `<h3>${data.title}</h3><p>${data.content}</p>`;
-          blogSection.appendChild(article);
-        });
+      backButton.addEventListener("mouseout", () => {
+        backButton.style.backgroundColor = "#444";
+        backButton.style.transform = "scale(1)";
       });
 
-      db.collection("poems").get().then((querySnapshot) => {
-        const poemSection = document.getElementById("poem-list");
-        poemSection.innerHTML = "";
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          const block = document.createElement("blockquote");
-          block.innerHTML = `${data.content.replaceAll("\n", "<br>")}`;
-          poemSection.appendChild(block);
+      backButton.addEventListener("click", () => {
+        section.style.opacity = 0;
+        setTimeout(() => {
+          section.style.display = "none";
+          document.querySelector(".splash-screen").style.display = "flex";
+        }, 300);
+      });
+
+      section.style.transition = "opacity 0.4s ease";
+      section.insertBefore(backButton, section.firstChild);
+      section.style.display = "none";
+    });
+
+    document.querySelectorAll(".card").forEach(card => {
+      const targetId = card.getAttribute("href").substring(1);
+      if (!visibleSections.includes(targetId)) {
+        card.style.display = "none";
+        return;
+      }
+
+      card.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(".splash-screen").style.display = "none";
+        document.querySelectorAll("section").forEach(section => {
+          section.style.display = "none";
+          section.style.opacity = 0;
         });
+        const section = document.getElementById(targetId);
+        section.style.display = "block";
+        setTimeout(() => {
+          section.style.opacity = 1;
+          section.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
       });
     });
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background: #343a40;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      color: #555;
-    }
-    .section-preview {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem;
-      gap: 2rem;
-    }
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      width: 280px;
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    footer {
-      background: #343a40;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div><strong>MyDil</strong></div>
-    <nav>
-      <a href="#careers">Careers</a>
-      <a href="#blog">Blog</a>
-      <a href="#poems">Poems</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <div class="hero">
-    <h1>Welcome to MyDil</h1>
-    <p>Sharing career gems, soulful blogs, and heartfelt poems.</p>
-  </div>
-  <section class="section-preview">
-    <div class="card">
-      <h3>Latest Career Post</h3>
-      <p>Exciting opportunities.</p>
-    </div>
-    <div class="card">
-      <h3>Recent Blog</h3>
-      <p>How teaching shaped my life—and what I’ve learned along the way.</p>
-    </div>
-    <div class="card">
-      <h3>voice of my heart</h3>
-      <p>My heart, a wanderer, writes in silence—read my latest verse.</p>
-    </div>
-  </section>
 
-  <section id="careers">
-    <h2>Career Opportunities</h2>
-    <p>Here you'll find handpicked job openings, especially in education and science fields. Check back regularly for updates!</p>
-    <ul id="career-list">
-      <li>Loading...</li>
-    </ul>
-  </section>
-
-  <section id="blog">
-    <h2>Blog</h2>
-    <p>My thoughts on teaching, learning, life experiences, and personal growth.</p>
-    <div id="blog-posts">Loading...</div>
-  </section>
-
-  <section id="poems">
-    <h2>Poems</h2>
-    <p>A collection of verses that come from the heart. Quiet, raw, and real.</p>
-    <div id="poem-list">Loading...</div>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm an educator, a seeker, and a poet. I believe in lifelong learning, honest reflection, and purposeful sharing. This site is my space to offer value, express freely, and connect.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach out to me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-  </section>
-
-  <footer>
-    &copy; 2025 MyDil | Designed with heart
-  </footer>
-</body>
-</html>
+    const footer = document.querySelector("footer") || document.createElement("footer");
+    footer.innerHTML += '<p>📧 rohitphy79@gmail.com | ☎️ +44 7721714024</p>';
+  });
+</script>
