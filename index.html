@@ -72,7 +72,7 @@
 
   .animated-heart {
     display: inline-block;
-    animation: heartbeat 1.5s infinite, rainbow 4s infinite linear;
+    animation: heartbeat 1.5s infinite, rainbowPulse 6s infinite linear;
   }
 
   @keyframes heartbeat {
@@ -90,14 +90,9 @@
     }
   }
 
-  @keyframes rainbow {
-    0% { color: red; }
-    16% { color: orange; }
-    32% { color: yellow; }
-    48% { color: green; }
-    64% { color: blue; }
-    80% { color: indigo; }
-    100% { color: violet; }
+  @keyframes rainbowPulse {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
   }
 </style>
 
