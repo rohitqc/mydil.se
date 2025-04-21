@@ -23,19 +23,24 @@
       color: white;
     }
     .splash-title {
-      font-size: 4.5rem;
+      font-size: 6rem;
       font-weight: bold;
-      animation: rainbowPulse 6s infinite linear;
+      animation: fadeInTitle 2s ease-out, rainbowPulse 6s infinite linear;
+      text-shadow: 2px 2px 0 white, -2px -2px 0 orange;
+      letter-spacing: 3px;
     }
-    .splash-title .animated-heart {
+    .animated-heart {
       display: inline-block;
       animation: heartbeat 1.5s infinite, rainbowPulse 6s infinite linear;
     }
     .splash-subtitle {
-      font-size: 2rem;
-      margin-top: 0.5rem;
-      color: white;
+      font-size: 2.2rem;
+      margin-top: 1rem;
       font-family: 'Great Vibes', cursive;
+      color: purple;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
+      font-weight: bold;
     }
     .splash-buttons {
       margin-top: 2rem;
@@ -99,282 +104,31 @@
       0% { filter: hue-rotate(0deg); }
       100% { filter: hue-rotate(360deg); }
     }
-  @keyframes fadeInTitle {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.splash-title {
-  font-size: 6rem;
-  font-weight: bold;
-  animation: fadeInTitle 2s ease-out, rainbowPulse 6s infinite linear;
-  text-shadow: 2px 2px 0 white, -2px -2px 0 orange;
-  letter-spacing: 3px;
-}
-.splash-subtitle {
-  font-size: 2.2rem;
-  margin-top: 1rem;
-  font-family: 'Great Vibes', cursive;
-  color: purple;
-  letter-spacing: 1.5px;
-  text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
-  font-weight: bold;
-}
-
-$1
+    @keyframes fadeInTitle {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <div class="splash-screen">
-    <div class="splash-title">DIL SE <span class="animated-heart">❤️</span>$3
+    <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
     <div class="splash-subtitle">The Voice of My Heart...</div>
-    $1
-  <a href="#" onclick="showNotebook('blog')">Blogs</a>
-  <a href="#" onclick="showNotebook('hindi')">मेरे अल्फ़ाज़</a>
-  <a href="#" onclick="showNotebook('english')">My words</a>
-  <a href="#" onclick="showNotebook('marathi')">शब्द माझे</a>
-</div>
-  </div>
-  <div class="notebooks" id="hindi" style="display:none;">
-    <div class="notebook" data-title="मेरे अल्फ़ाज़">
-      <div class="poem">वो Hi कहके
-यू ही चले गए,
-दिल के दरवाजे पर दस्तक देकर
-न जाने कहा छुप गए।
-अलफ्जों को जोड़कर
-कुछ कहना चाहा था,
-मुस्कुराकर देख उसे
-नजरों से कुछ बया करना चाहा।
-मुलाकात लफ्जों की होती,
-इबादत दिल की होती,
-उससे पहले ही वो,
-लफ्जों को दिल में छुपाकर चले गए।
-<div class="signature">— Rohit</div></div>
-      <div class="poem">बिखरे रंगों से 
-अपने मन को रंग दिया,
-नींद से जाग कर,
-उठी आवाज जो दिल में थी,
-सपनो को हकीकत में बदल दिया।
-नई उम्मीद और नई उमंग के साथ,
-अंधेरे से रोशनी की ओर,
-मैने ये सफर भी पूरा कर लिया।
-<div class="signature">— Rohit</div></div>
-      <div class="poem">उन्हें दिल के करीब आने दिया
-दिल से उन्हें अपना बनाया
-इश्क तो नही था 
-पर खूबसूरत वो रिश्ता बनाया
-जमाने ने इसे कुछ और नाम दे दिया
-पर हमने उसे दिल पे ना लिया
-पर क्या करे 
-वक्त और हालात ने साथ छोड़ दिया
-ना उन्होंने कुछ कहा ना ही मैंने
-फिर भी रिश्ता टूट सा गया
-याद आती है उनकी हमे 
-शायद उन्हें भी हमे
-कहना तो बोहोत कुछ है
-बस लफ्ज़ नहीं मिल पाते !
-<div class="signature">— Rohit Nale</div></div>
-      <div class="poem">कभी कोई अनजान अपना लगता है
-तो कभी कोई अपना अनजान हो जाता है,
-रिश्ते तो कई बन सकते है,
-बस हर मुसाफिर को अपना कहना होता है,
-यू तो राह चलते मुसाफिर हजार मिलेंगे,
-मगर अपनापन सिर्फ कहने से नही निभाने से होता है।
-<div class="signature">— Rohit</div></div>
-      <div class="poem">कभी किसी के इतना भी करीब मत जाओ
-की पास होते हुए भी उसकी याद आ जाए !
-कभी किसी से इतना भी दूर मत हो जाओ 
-की पास होते हुए भी दूरी मिलो में बढ़ जाए !!
-<div class="signature">— Rohit</div></div>
-      <div class="poem">लम्हे 
-सोच रहा हूं
-कैद कर लू इन लम्हों को
-ना मैसम बदलेंगे ना आएगा कल
-बस ये लम्हा रहेगा और रहूंगा में
-क्या  सच में लम्हों को कैद कर पाऊंगा ?
-सोच रहा हु कैद इन्हे करके दिल में रख दू 
-ना कोई चुरा पाएगा ना में भुला पाऊंगा
-हर पल बस इस लम्हे को 
-दिल की तिजोरी से सिर्फ में देख पाऊंगा
-हर सास में और दिल की हर धड़कन में
-बस इस लम्हे को महसूस करूंगा।
-<div class="signature">— Rohit</div></div>
-      <div class="poem">तुम्हारी आंखे तुमसे ज्यादा बोलती है
-पलके झुकाके सवाल वो मुझसे करती है
-पलके उठाके जवाब मांगती है
-कभी दाई ओर तो कभी बाई ओर देख कर
-यू नाराजगी जताती है।
-कभी इधर तो कभी उधर भागती रहती है
-पर नजर मुझसे मिलते ही
-एक पल में थम सी जाती है।
-मेरी नजरो से तुम्हारी नजर जब मिलती है
-तुम्हारे दिल का हाल बताती है
-होले से पलके झुकाकर 
-यू इश्क बया करती है
-तब ही तो में कह रहा हूं 
-तुम्हारी आंखे तुमसे ज्यादा बोलती है।
-<div class="signature">— Rohit</div></div>
-      <div class="poem">ये जिंदगी बड़ी खूबसूरत है,
-जरा जी कर तो देख,
-लाखो आयेंगे तूफ़ान यहां,
-जरा हस कर तो देख,
-मिलेंगे गम कही,
-पर खुशियों को समेट कर तो देख।।
-
-ये जिंदगी बड़ी खूबसूरत है,
-जरा जी कर तो देख,
-परेशान तो हर कोई है,
-थोड़ी खुशी बाट कर तो देख,
-मिलेगा प्यार ही तुम्हे,
-नफरत छोड़ कर तो देख।।
-
-ये जिंदगी बड़ी खूबसूरत है,
-नजरिया बदल के तो देख।।
-<div class="signature">— Rohit</div></div>
-      <div class="poem">एक पल
-एक पल बोहोत कुछ सीखता है
-कभी रुलाता है तो कभी हसाता है
-हर एक पल नया होता है ।
-पर  ए बात  अजीब है
-हर बीता पल कल कहलाता है
-हर आने वाला पल भी कल ही कहा जाता है
-पर अब का ये पल
-... सोचने से पहले ही चला जाता है।
-<div class="signature">— Rohit</div></div>
-      <div class="poem">बरसात के इस मौसम में
-आज एक ख्वाब पूरा हुआ
-आपके हसीन चेहरे देखकर,
-आज दिल खुश हुआ ।
-साल के इस आखरी पल में
-जिंदगी का नया रास्ता तय हुआ,
-मुस्कुराते चेहरों को देखकर
-इस साल का सफर पूरा हुआ।
-याद आएगा आज का ये पल
-तो फिर से दिल में आगाज होगा
-मिलेंगे फिर कभी हम इस तरह
-तो फिर से इस बारिश को आना होगा ।
-<div class="signature">— Rohit</div></div>
-    </div>
-
-    </div>
-<div class="notebooks" id="english" style="display:none;">
-<div class="notebook" data-title="My words">
-      <div class="poem">The Depth of Your Eyes
-My mind mesmerise
-With every breathe 
-I feel pleased
-The smile on your lips
-Curls of your hair
-With every passing breeze
-My heart miss a beat.
-<div class="signature">— Rohit</div></div>
-      <div class="poem">Inspite of many difficulties,
-Inspite of many worries,
-Inspite of many failures,
-Life is to be continued...
-You may lose many people, 
-You may lose your patience,
-You may lose your hope,
-Still the life to be continued...
-Some may say you are wrong, 
-Some may say you are right, 
-Some may follow you, 
-Some may leave you,
-But without looking backward,
-Life is to be continued...
-One may say you are a loser,
-One may say you are a fool,
-One may say you are incapable,
-People just keep on saying,
-It is their work to say,
-But it is our work without stopping,
-Life is to be continued...
-Some may help you
-While some may not,
-Some may trust you 
-While some may not,
-But one person can always trust you 
-And that is nome other than "you"
-Look for just 'you'  in ''you"
-And continue to live...
-You may fall once, 
-You may also fail once,
-But always remember
-You may also fly once,
-And continue to live your life ...
-Life is wonderful, 
-If you make it yourself wonderful,
-You are the almighty of your life, 
-So without worrying 
-of the Past,Present and Future,
-Just continue to live your life...
-Last but not the least 
-Accepting the challenge of life to live 
- ....Life is to be continued
-...... Life is to be continued
-.............Life is to be continued!!!!...
-<div class="signature">— Rohit</div></div>
-      <div class="poem" style="background: #add8e6; color: white; padding: 1rem; border-radius: 10px;">Life is like a long flowing river
-For some it's century miles
-While for some a  less than that
-We need to learn to swim like a fish
-Always against the flow
-but you need to be a lot more than a fish
-Weathers are not the same always
-Swim above the water and swim under it
-Long breaths are much required
-When the storm is alive 
-You need to find the shore
-And wait for the right time 
-Patience will  calm the  water
-And then you can swim again.
-Sometimes to go for a long journey
-You'll need to build a boat
-It is much necessary that
-You learn to survive
-In the storms,  floods, and the rains
-In  life under it and above it.
-You need to learn to  take  long breaths
-Silence will guide you,
-Chaos in your mind will drown you
-But here patience is the key 
-To live and survive in the life like a river.
-<div class="signature">— Rohit</div></div>
-    </div>
-
-    </div>
-<div class="notebooks" id="marathi" style="display:none;">
-<div class="notebook" data-title="शब्द माझे">
-      <div class="poem">मला आवडतं एकटं राहणं,
-स्वतःच्या धुंदीत मनमोकळेपणाने जगणं, 
-वेड्यासारख आयुश्याचा आनंद लूटनं,
-आणि स्वतःच्या पद्धतीने आयुष्य जगणं.
-मला आवडत गर्दीतही एकांत शोधणं,
-एकांतात विलीन होणं,
-विचारांच्या माळेत गुंफण,
-आणि स्वतःच्या आनंदात सहभागी होणं.
-मला आवडतं म्हणून हसणं,
-एकटाच का होईना पण मनापासनं,
-माघील आयुश्याला निरखणं,
-आणि शांत मनाने स्वतःला पाहणं.
-मला आवडतं एकाग्र होणं,
-जीवनाचं पुस्तक उलटून पाहणं,
-विचारांनी मावलेल्या समुद्राच्या पलीकडे जाणं,
-आणि माझ्यातल्या मला शोधणं.
-मला आवडत एकटं राहणं,
-स्वतःच्या सानिध्यात जगणं,
-शांतेत विलीन होणं,
-आणि सुंदर आयुष्याला मिठीत घेणं.
-<div class="signature">— Rohit</div></div>
+    <div class="splash-buttons">
+      <a href="#" onclick="showNotebook('blog')">Blogs</a>
+      <a href="#" onclick="showNotebook('hindi')">मेरे अल्फ़ाज़</a>
+      <a href="#" onclick="showNotebook('english')">My words</a>
+      <a href="#" onclick="showNotebook('marathi')">शब्द माझे</a>
     </div>
   </div>
   <script>
-  function showNotebook(id) {
-    document.querySelector('.splash-screen').style.display = 'none';
-    document.querySelectorAll('.notebooks').forEach(nb => nb.style.display = 'none');
-    document.getElementById(id).style.display = 'flex';
-  }
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
+    function showNotebook(id) {
+      document.querySelector('.splash-screen').style.display = 'none';
+      document.querySelectorAll('.notebooks').forEach(nb => nb.style.display = 'none');
+      document.getElementById(id).style.display = 'flex';
+    }
+  </script>
+   document.addEventListener("DOMContentLoaded", () => {
     const visibleSections = ["blog", "poems"];
 
     document.querySelectorAll(".card").forEach(card => {
