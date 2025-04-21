@@ -1,139 +1,163 @@
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
-  .splash-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    background: url('assets/splash-background.jpg') no-repeat center center/cover;
-    font-family: 'Great Vibes', cursive;
-    font-size: 4.5rem;
-    text-align: center;
-    padding-top: 3rem;
-    font-weight: bold;
-  }
-
-  .splash-title {
-    margin-top: 1rem;
-    font-size: 4.5rem;
-    color: red;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 0 white, -2px -2px 0 orange, 2px -2px 0 orange, -2px 2px 0 white;
-    font-weight: bold;
-  }
-
-  .splash-subtitle {
-    font-size: 3rem;
-    margin-top: 0.5rem;
-    font-family: 'Great Vibes', cursive;
-    color: purple;
-    letter-spacing: 1.5px;
-    text-shadow: 1px 1px 0 white, -1px -1px 0 orange, 1px -1px 0 orange, -1px 1px 0 white;
-    font-weight: bold;
-  }
-
-  .splash-buttons {
-    margin-top: auto;
-    margin-bottom: 3rem;
-    display: flex;
-    gap: 2rem;
-  }
-
-  .splash-buttons a {
-    padding: 1rem 2rem;
-    font-size: 2.4rem;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    font-weight: bold;
-  }
-
-  .splash-buttons a[href="#blog"] {
-    background-color: lightblue;
-    color: darkmagenta;
-    text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
-  }
-
-  .splash-buttons a[href="#poems"] {
-    background-color: lightgreen;
-    color: darkblue;
-    text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
-  }
-
-  .splash-buttons a:hover {
-    opacity: 0.9;
-  }
-
-  .main-cards, section, footer {
-    display: none;
-  }
-
-  .animated-heart {
-    display: inline-block;
-    animation: heartbeat 1.5s infinite, rainbowPulse 6s infinite linear;
-  }
-
-  @keyframes heartbeat {
-    0%, 100% {
-      transform: scale(1);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIL SE - The Voice of My Heart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f7f7f7;
     }
-    25% {
-      transform: scale(1.2);
+    .splash-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('assets/splash-background.jpg') no-repeat center center/cover;
+      font-family: 'Great Vibes', cursive;
+      text-align: center;
+      color: white;
     }
-    50% {
-      transform: scale(0.9);
+    .splash-title {
+      font-size: 4.5rem;
+      font-weight: bold;
+      animation: rainbowPulse 6s infinite linear;
     }
-    75% {
-      transform: scale(1.1);
+    .splash-title .animated-heart {
+      display: inline-block;
+      animation: heartbeat 1.5s infinite, rainbowPulse 6s infinite linear;
     }
-  }
+    .splash-subtitle {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+      color: white;
+      font-family: 'Great Vibes', cursive;
+    }
+    .splash-buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
+    }
+    .splash-buttons a {
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.8);
+      font-weight: bold;
+      color: #333;
+    }
 
-  @keyframes rainbowPulse {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
-  }
-  @keyframes fadeInTitle {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+    .notebooks {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .notebook {
+      width: 90%;
+      max-width: 700px;
+      margin: 1rem auto;
+      background: #fff url('assets/notebook-lines.png') repeat-y left top;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .notebook::before {
+      content: attr(data-title);
+      position: absolute;
+      top: -1.8rem;
+      left: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: #fff;
+      padding: 0 0.5rem;
+      font-family: 'Great Vibes', cursive;
+    }
+    .poem {
+      white-space: pre-line;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .signature {
+      text-align: right;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.3rem;
+    }
 
-<div class="splash-screen">
-  <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
-  <div class="splash-subtitle">The Voice of My Heart...</div>
-  <div class="splash-buttons">
-    <a href="#blog" class="card">Blogs</a>
-    <a href="#poems" class="card">Poems</a>
-  </div>
-</div>
-
-<section id="poems" style="display: none; opacity: 0; transition: opacity 0.4s ease; font-size: 1.4rem; font-weight: bold; color: #222; font-family: 'Inter', sans-serif; max-width: 800px; margin: 3rem auto; background: url('assets/poem-background.jpg') no-repeat center center/cover, rgba(255,255,255,0.85); padding: 2rem; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.1);">
-  <button style="margin-bottom: 1rem; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer; background-color: #444; color: #fff; font-weight: bold;" onclick="document.getElementById('poems').style.display='none'; document.querySelector('.splash-screen').style.display='flex';">← Back to Home</button>
-  <h2 style="font-size: 2.8rem; font-weight: bold; color: darkblue; text-shadow: 2px 2px 0 yellow, -2px -2px 0 orange, 2px -2px 0 orange, -2px 2px 0 yellow; animation: fadeInTitle 2s ease forwards; opacity: 0;">Hi</h2>
-  <p style="white-space: pre-line; font-weight: bold; color: darkblue; text-shadow: 1px 1px 0 black; background-color: rgba(255, 255, 255, 0.6); padding: 1rem; border-radius: 8px;">
-    वो Hi कहके
-    यू ही चले गए,
-    दिल के दरवाजे पर दस्तक देकर
-    न जाने कहा छुप गए।
-
-    अलफ्जों को जोड़कर
-    कुछ कहना चाहा था,
-    मुस्कुराकर देख उसे
-    नजरों से कुछ बया करना चाहा।
-
-    मुलाकात लफ्जों की होती,
-    इबादत दिल की होती,
-    उससे पहले ही वो,
-    लफ्जों को दिल में छुपाकर चले गए।
-  
-    
-    <div style="text-align: right; font-style: italic; font-size: 1rem; margin-top: 1.5rem; background-color: rgba(255, 255, 255, 0.6); padding: 0.5rem 1rem; border-radius: 6px; display: inline-block;">
-      — Rohit<br>
-      (6th April 2025)
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(0.9); }
+      75% { transform: scale(1.1); }
+    }
+    @keyframes rainbowPulse {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash-screen">
+    <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
+    <div class="splash-subtitle">The Voice of My Heart...</div>
+    <div class="splash-buttons">
+      <a href="#" onclick="showNotebook('hindi')">Poems</a>
     </div>
-</section>
+  </div>
+
+  <div class="notebooks" id="hindi">
+    <div class="notebook" data-title="मेरे अल्फ़ाज़">
+      <div class="poem">
+<div class="signature">— Rohit</div></div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+    </div>
+
+    <div class="notebook" data-title="My words">
+      <div class="poem">
+<div class="signature">— Rohit</div></div></div>
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+      <div class="poem" style="background: #add8e6; color: white; padding: 1rem; border-radius: 10px;">
+<div class="signature">— Rohit</div></div>
+    </div>
+
+    <div class="notebook" data-title="शब्द माझे">
+      <div class="poem">
+<div class="signature">— Rohit</div></div>
+    </div>
+  </div>
+
+  <script>
+    function showNotebook(id) {
+      document.querySelector('.splash-screen').style.display = 'none';
+      document.getElementById(id).style.display = 'flex';
+    }
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -162,7 +186,5 @@
       });
     });
   });
-</script>
-
 </body>
 </html>
