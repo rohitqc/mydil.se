@@ -3,27 +3,35 @@
 
   .splash-screen {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     height: 100vh;
-    background: url('assets/splash-background.jpg')
-    no-repeat center center/cover;
+    background: url('assets/splash-background.jpg') no-repeat center center/cover;
     color: #fff;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
     text-align: center;
+    padding-top: 3rem;
   }
 
-  .splash-screen h1 {
-    margin-bottom: 2rem;
+  .splash-title {
+    margin-top: 1rem;
+    font-size: 3rem;
+  }
+
+  .splash-subtitle {
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+    font-family: 'Inter', sans-serif;
   }
 
   .splash-buttons {
+    margin-top: auto;
+    margin-bottom: 3rem;
     display: flex;
     gap: 2rem;
-    margin-top: 2rem;
   }
 
   .splash-buttons a {
@@ -43,10 +51,30 @@
   .main-cards, section, footer {
     display: none;
   }
+  .animated-heart {
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.2);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+  }
 </style>
 
 <div class="splash-screen">
-  <h1>Mydil.se - Voice of My Heart</h1>
+  <div class="splash-title">DIL SE<br><span class="animated-heart">❤️</span></div>
+  <div class="splash-subtitle" style="font-family: 'Great Vibes', cursive; font-size: 2rem;">The voice of my heart</div>
   <div class="splash-buttons">
     <a href="#blog" class="card">Blogs</a>
     <a href="#poems" class="card">Poems</a>
