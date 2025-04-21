@@ -111,10 +111,10 @@
   </style>
 </head>
 <body>
-  <div class="splash-screen">
-    <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
-    <div class="splash-subtitle">The Voice of My Heart...</div>
-    <div class="splash-buttons">
+  <div class="splash-screen" style="align-items: flex-start; padding-top: 2rem;">
+  <div class="splash-title" style="background: linear-gradient(to right, darkmagenta, red); -webkit-background-clip: text; color: transparent;">DIL SE <span class="animated-heart">❤️</span></div>
+  <div class="splash-subtitle">The Voice of My Heart...</div>
+  <div class="splash-buttons">
       <a href="#" onclick="showNotebook('blog')">Blogs</a>
       <a href="#" onclick="showNotebook('hindi')">मेरे अल्फ़ाज़</a>
       <a href="#" onclick="showNotebook('english')">My words</a>
@@ -122,13 +122,14 @@
     </div>
   </div>
   <script>
-    function showNotebook(id) {
-      document.querySelector('.splash-screen').style.display = 'none';
-      document.querySelectorAll('.notebooks').forEach(nb => nb.style.display = 'none');
-      document.getElementById(id).style.display = 'flex';
-    }
-  </script>
-   document.addEventListener("DOMContentLoaded", () => {
+  function showNotebook(id) {
+    document.querySelector('.splash-screen').style.display = 'none';
+    document.querySelectorAll('.notebooks').forEach(nb => nb.style.display = 'none');
+    const target = document.getElementById(id);
+    if (target) target.style.display = 'flex';
+  }
+</script>
+  document.addEventListener("DOMContentLoaded", () => {
     const visibleSections = ["blog", "poems"];
 
     document.querySelectorAll(".card").forEach(card => {
@@ -156,3 +157,4 @@
   });
 </body>
 </html>
+
