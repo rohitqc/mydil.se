@@ -139,6 +139,34 @@
     (6th April 2025)
   </p>
 </section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const visibleSections = ["blog", "poems"];
+
+    document.querySelectorAll(".card").forEach(card => {
+      const targetId = card.getAttribute("href").substring(1);
+      if (!visibleSections.includes(targetId)) {
+        return;
+      }
+
+      card.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(".splash-screen").style.display = "none";
+        document.querySelectorAll("section").forEach(section => {
+          section.style.display = "none";
+          section.style.opacity = 0;
+        });
+
+        const section = document.getElementById(targetId);
+        section.style.display = "block";
+        setTimeout(() => {
+          section.style.opacity = 1;
+          section.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
