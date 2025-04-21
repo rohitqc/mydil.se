@@ -99,17 +99,42 @@
       0% { filter: hue-rotate(0deg); }
       100% { filter: hue-rotate(360deg); }
     }
-  </style>
+  @keyframes fadeInTitle {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.splash-title {
+  font-size: 6rem;
+  font-weight: bold;
+  animation: fadeInTitle 2s ease-out, rainbowPulse 6s infinite linear;
+  text-shadow: 2px 2px 0 white, -2px -2px 0 orange;
+  letter-spacing: 3px;
+}
+.splash-subtitle {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  font-family: 'Great Vibes', cursive;
+  color: purple;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 orange;
+  font-weight: bold;
+}
+
+$1
 </head>
 <body>
   <div class="splash-screen">
-    <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
+    <div class="splash-title">DIL SE <span class="animated-heart">❤️</span>$3
     <div class="splash-subtitle">The Voice of My Heart...</div>
-    <div class="splash-buttons">
-      <a href="#" onclick="showNotebook('hindi')">Poems</a>
-    </div>
+    $1
+  <a href="#" onclick="showNotebook('blog')">Blogs</a>
+  <a href="#" onclick="showNotebook('hindi')">मेरे अल्फ़ाज़</a>
+  <a href="#" onclick="showNotebook('english')">My words</a>
+  <a href="#" onclick="showNotebook('marathi')">शब्द माझे</a>
+</div>
   </div>
-  <div class="notebooks" id="hindi">
+  <div class="notebooks" id="hindi" style="display:none;">
     <div class="notebook" data-title="मेरे अल्फ़ाज़">
       <div class="poem">वो Hi कहके
 यू ही चले गए,
@@ -230,7 +255,9 @@
 <div class="signature">— Rohit</div></div>
     </div>
 
-    <div class="notebook" data-title="My words">
+    </div>
+<div class="notebooks" id="english" style="display:none;">
+<div class="notebook" data-title="My words">
       <div class="poem">The Depth of Your Eyes
 My mind mesmerise
 With every breathe 
@@ -314,7 +341,9 @@ To live and survive in the life like a river.
 <div class="signature">— Rohit</div></div>
     </div>
 
-    <div class="notebook" data-title="शब्द माझे">
+    </div>
+<div class="notebooks" id="marathi" style="display:none;">
+<div class="notebook" data-title="शब्द माझे">
       <div class="poem">मला आवडतं एकटं राहणं,
 स्वतःच्या धुंदीत मनमोकळेपणाने जगणं, 
 वेड्यासारख आयुश्याचा आनंद लूटनं,
@@ -339,15 +368,14 @@ To live and survive in the life like a river.
     </div>
   </div>
   <script>
-    function showNotebook(id) {
-      document.querySelector('.splash-screen').style.display = 'none';
-      document.getElementById(id).style.display = 'flex';
-    }
-  <script>
-    function showNotebook(id) {
-      document.querySelector('.splash-screen').style.display = 'none';
-      document.getElementById(id).style.display = 'flex';
-    }
+  function showNotebook(id) {
+    document.querySelector('.splash-screen').style.display = 'none';
+    document.querySelectorAll('.notebooks').forEach(nb => nb.style.display = 'none');
+    document.getElementById(id).style.display = 'flex';
+  }
+</script>
+</body>
+</html>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
