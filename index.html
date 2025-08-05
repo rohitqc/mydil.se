@@ -6,255 +6,137 @@
   <title>DIL SE - The Voice of My Heart</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter&display=swap" rel="stylesheet">
   <style>
-    /* Styles for splash, heart animation, scroll-to-top, buttons, and structure */
-    body { margin: 0; font-family: 'Inter', sans-serif; background: #f7f7f7; }
-    .splash-screen { display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-      height: 100vh; background: url('assets/splash-background.jpg') no-repeat center center/cover;
-      font-family: 'Great Vibes', cursive; text-align: center; color: white; padding-top: 3rem; }
-    .splash-title { font-size: 6rem; font-weight: bold; animation: fadeInTitle 2s ease-out, rainbowPulse 6s infinite linear;
-      background: linear-gradient(to right, darkmagenta, red); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      letter-spacing: 3px; text-shadow: 2px 2px 0 white, -2px -2px 0 orange; }
-    .animated-heart { display: inline-block; animation: heartbeat 1.5s infinite, rainbowPulse 6s infinite linear; }
-    .splash-subtitle { font-size: 2.2rem; margin-top: 1rem; font-family: 'Great Vibes', cursive; color: purple;
-      letter-spacing: 1.5px; text-shadow: 1px 1px 0 white, -1px -1px 0 orange; font-weight: bold; }
-    .splash-buttons { margin-top: auto; margin-bottom: 3rem; display: flex; gap: 1.5rem; }
-    .splash-buttons a {
-      padding: 1rem 2rem; font-size: 1.4rem; border-radius: 10px; text-decoration: none;
-      background: rgba(255, 255, 255, 0.85); font-weight: bold; color: #333; border: 1px solid #ddd;
-      transition: transform 0.2s ease;
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f7f7f7;
+      scroll-behavior: smooth;
     }
-    .splash-buttons a:hover { transform: translateY(-3px); }
- .notebooks { display: none; flex-direction: column; align-items: center; padding: 2rem; }
-    .notebook { width: 90%; max-width: 700px; margin: 1rem auto; background: #fff url('assets/notebook-lines.png') repeat-y left top;
-      padding: 2rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); position: relative; }
-    .notebook::before {
-      content: attr(data-title); position: absolute; top: -1.8rem; left: 1rem; font-size: 1.2rem;
-      font-weight: bold; background: #fff; padding: 0 0.5rem; font-family: 'Great Vibes', cursive;
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
-    .poem { white-space: pre-line; margin-bottom: 2rem; font-size: 1.1rem; font-weight: bold; color: #111; }
-    .signature { text-align: right; font-family: 'Great Vibes', cursive; font-size: 1.3rem;
-      background: rgba(255, 255, 255, 0.6); padding: 0.5rem; border-radius: 5px; margin-top: 1rem; }
-    @keyframes heartbeat { 0%, 100% { transform: scale(1); } 25% { transform: scale(1.2); }
-      50% { transform: scale(0.9); } 75% { transform: scale(1.1); } }
-    @keyframes rainbowPulse { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(360deg); } }
-    @keyframes fadeInTitle { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: darkmagenta;
+    }
+
+    section {
+      padding: 6rem 2rem 3rem;
+      min-height: 100vh;
+    }
+
+    .title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: darkmagenta;
+    }
+
+    .poem {
+      background: #fff;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      white-space: pre-line;
+    }
+
+    .signature {
+      text-align: right;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <div class="splash-screen">
-    <div class="splash-title">DIL SE <span class="animated-heart">❤️</span></div>
-    <div class="splash-subtitle">The Voice of My Heart...</div>
-    <div class="splash-buttons">
-      <a href="#" onclick="showNotebook('blog')">Blogs</a>
-      <a href="#" onclick="showNotebook('hindi')">मेरे अल्फ़ाज़</a>
-      <a href="#" onclick="showNotebook('english')">My words</a>
-      <a href="#" onclick="showNotebook('marathi')">शब्द माझे</a>
-    </div>
+
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#hindi">मेरे अल्फ़ाज़</a>
+    <a href="#english">My Words</a>
+    <a href="#marathi">शब्द माझे</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home">
+  <div class="title">DIL SE ❤️</div>
+  <p style="text-align:center; font-size:1.2rem;">The Voice of My Heart...</p>
+</section>
+
+<section id="hindi">
+  <div class="title">मेरे अल्फ़ाज़</div>
+  <div class="poem">
+    वो Hi कहके यू ही चले गए...  
+    <div class="signature">— Rohit</div>
   </div>
+  <!-- Add more Hindi poems here -->
+</section>
 
-  <!-- POEMS WILL BE INSERTED HERE -->
-
-<!-- Hindi Poems -->
-<div class="notebooks" id="hindi">
-  <div class="notebook" data-title="मेरे अल्फ़ाज़">
-
-    <div class="poem" style="background: #fff8dc;">
-      <h3>Hi</h3>
-      <p>वो Hi कहके
-यू ही चले गए,
-दिल के दरवाजे पर दस्तक देकर
-न जाने कहा छुप गए।
-
-अलफ्जों को जोड़कर
-कुछ कहना चाहा था,
-मुस्कुराकर देख उसे
-नजरों से कुछ बया करना चाहा।
-
-मुलाकात लफ्जों की होती,
-इबादत दिल की होती,
-उससे पहले ही वो,
-लफ्जों को दिल में छुपाकर चले गए।</p>
-      <div class="signature">— Rohit</div>
-    </div>
-
-    <div class="poem" style="background: #f0f8ff;">
-      <h3>बिखरे रंगों में</h3>
-      <p>बिखरे रंगों से 
-अपने मन को रंग दिया,
-नींद से जाग कर,
-उठी आवाज जो दिल में थी,
-सपनो को हकीकत में बदल दिया।
-नई उम्मीद और नई उमंग के साथ,
-अंधेरे से रोशनी की ओर,
-मैने ये सफर भी पूरा कर लिया।</p>
-      <div class="signature">— Rohit</div>
-    </div>
-
-    <div class="poem" style="background: #fafad2;">
-      <h3>लम्हे</h3>
-      <p>सोच रहा हूं
-कैद कर लू इन लम्हों को
-ना मैसम बदलेंगे ना आएगा कल
-बस ये लम्हा रहेगा और रहूंगा में
-क्या  सच में लम्हों को कैद कर पाऊंगा ?
-सोच रहा हु कैद इन्हे करके दिल में रख दू 
-ना कोई चुरा पाएगा ना में भुला पाऊंगा
-हर पल बस इस लम्हे को 
-दिल की तिजोरी से सिर्फ में देख पाऊंगा
-हर सास में और दिल की हर धड़कन में
-बस इस लम्हे को महसूस करूंगा।</p>
-      <div class="signature">— Rohit</div>
-    </div>
-
+<section id="english">
+  <div class="title">My Words</div>
+  <div class="poem">
+    The depth of your eyes  
+    My mind mesmerise...  
+    <div class="signature">— Rohit</div>
   </div>
-</div>
+</section>
 
-<!-- English Poems -->
-<div class="notebooks" id="english">
-  <div class="notebook" data-title="My words">
-
-    <div class="poem" style="background: #e0f7fa;">
-      <h3>The Depth of Your Eyes</h3>
-      <p>The depth of your eyes
-My mind mesmerise
-With every breathe 
-I feel pleased
-The smile on your lips
-Curls of your hair
-With every passing breeze
-My heart miss a beat.</p>
-      <div class="signature">— Rohit</div>
-    </div>
-
-    <div class="poem" style="background: #d1f2eb;">
-      <h3>Life is to be Continued...</h3>
-      <p>Inspite of many difficulties,
-Inspite of many worries,
-Inspite of many failures,
-Life is to be continued...
-
-You may lose many people, 
-You may lose your patience,
-You may lose your hope,
-Still the life to be continued...
-
-Some may say you are wrong, 
-Some may say you are right, 
-Some may follow you, 
-Some may leave you,
-But without looking backward,
-Life is to be continued...
-
-One may say you are a loser,
-One may say you are a fool,
-One may say you are incapable,
-People just keep on saying,
-It is their work to say,
-But it is our work without stopping,
-Life is to be continued...
-
-Some may help you
-While some may not,
-Some may trust you 
-While some may not,
-But one person can always trust you 
-And that is nome other than "you"
-Look for just 'you'  in ''you"
-And continue to live...
-
-You may fall once, 
-You may also fail once,
-But always remember
-You may also fly once,
-And continue to live your life ...
-
-Life is wonderful, 
-If you make it yourself wonderful,
-You are the almighty of your life, 
-So without worrying 
-of the Past,Present and Future,
-Just continue to live your life...
-
-Last but not the least 
-Accepting the challenge of life to live 
- ....Life is to be continued
-...... Life is to be continued
-.............Life is to be continued!!!!...</p>
-      <div class="signature">— Rohit</div>
-    </div>
-
+<section id="marathi">
+  <div class="title">शब्द माझे</div>
+  <div class="poem">
+    मला आवडतं एकटं राहणं...  
+    <div class="signature">— Rohit</div>
   </div>
-</div>
+</section>
 
-<!-- Marathi Poems -->
-<div class="notebooks" id="marathi">
-  <div class="notebook" data-title="शब्द माझे">
-    <div class="poem" style="background: #f3e5f5;">
-      <h3>मला आवडतं म्हणून</h3>
-      <p>मला आवडतं एकटं राहणं,
-स्वतःच्या धुंदीत मनमोकळेपणाने जगणं, 
-वेड्यासारख आयुश्याचा आनंद लूटनं,
-आणि स्वतःच्या पद्धतीने आयुष्य जगणं.
+<section id="about">
+  <div class="title">About Me</div>
+  <p style="max-width:700px; margin:auto; font-size:1.1rem;">
+    I'm Rohit — a poet, educator, and dreamer. This space is my heart’s canvas, where words bloom in Hindi, English, and Marathi. I write to feel, to reflect, and to connect.
+  </p>
+</section>
 
-मला आवडत गर्दीतही एकांत शोधणं,
-एकांतात विलीन होणं,
-विचारांच्या माळेत गुंफण,
-आणि स्वतःच्या आनंदात सहभागी होणं.
+<section id="contact">
+  <div class="title">Contact</div>
+  <p style="text-align:center;">Want to connect or share your thoughts? Reach me at: <strong>rohit@example.com</strong></p>
+</section>
 
-मला आवडतं म्हणून हसणं,
-एकटाच का होईना पण मनापासनं,
-माघील आयुश्याला निरखणं,
-आणि शांत मनाने स्वतःला पाहणं.
+<footer>
+  © 2025 DIL SE — Created with ❤️ by Rohit
+</footer>
 
-मला आवडतं एकाग्र होणं,
-जीवनाचं पुस्तक उलटून पाहणं,
-विचारांनी मावलेल्या समुद्राच्या पलीकडे जाणं,
-आणि माझ्यातल्या मला शोधणं.
-
-मला आवडत एकटं राहणं,
-स्वतःच्या सानिध्यात जगणं,
-शांतेत विलीन होणं,
-आणि सुंदर आयुष्याला मिठीत घेणं.</p>
-      <div class="signature">— Rohit</div>
-    </div>
-  </div>
-</div>
- <script>
-    function showNotebook(id) {
-      document.querySelector('.splash-screen').style.display = 'none';
-      document.querySelectorAll('.notebooks').forEach(nb => nb.style.display = 'none');
-      const target = document.getElementById(id);
-      if (target) target.style.display = 'flex';
-    }
-  </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const visibleSections = ["blog", "poems"];
-
-    document.querySelectorAll(".card").forEach(card => {
-      const targetId = card.getAttribute("href").substring(1);
-      if (!visibleSections.includes(targetId)) {
-        return;
-      }
-
-      card.addEventListener("click", e => {
-        e.preventDefault();
-        document.querySelector(".splash-screen").style.display = "none";
-        document.querySelectorAll("section").forEach(section => {
-          section.style.display = "none";
-          section.style.opacity = 0;
-        });
-
-        const section = document.getElementById(targetId);
-        section.style.display = "block";
-        setTimeout(() => {
-          section.style.opacity = 1;
-          section.scrollIntoView({ behavior: 'smooth' });
-        }, 50);
-      });
-    });
-  });
-</script>
 </body>
 </html>
-
