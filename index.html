@@ -44,30 +44,34 @@
     }
 
     .title {
-      font-family: 'Great Vibes', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 5rem;
       font-weight: bold;
-      animation: rainbowPulse 6s infinite linear;
-      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 3px 3px 0 white, -3px -3px 0 black;
       letter-spacing: 3px;
       margin-bottom: 0.5em;
     }
 
-    .title span.heart {
-      animation: rainbowPulse 6s infinite linear;
+    .rainbow-text, .rainbow-heart {
+      font-family: 'Great Vibes', cursive;
       background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: rainbowPulse 6s infinite linear;
+      text-shadow: 3px 3px 0 white, -3px -3px 0 black;
     }
 
-    .subtitle {
-      font-size: 1.6rem;
+    .subtitle-box {
+      background-color: rgba(173, 216, 230, 0.8); /* light blue with transparency */
       color: purple;
-      text-shadow: 0 0 8px orange, 0 0 12px yellow;
+      padding: 1em 2em;
+      border-radius: 10px;
+      font-size: 1.5rem;
       margin-bottom: 2em;
+      display: inline-block;
+      text-shadow: 0 0 8px orange, 0 0 12px yellow;
     }
 
     nav.top-nav, nav.bottom-nav {
@@ -144,8 +148,9 @@
       .title {
         font-size: 3rem;
       }
-      .subtitle {
+      .subtitle-box {
         font-size: 1rem;
+        padding: 0.5em 1em;
       }
       nav a {
         font-size: 1rem;
@@ -159,8 +164,11 @@
   <div class="hero-section">
     <div class="overlay"></div>
     <div class="header-content">
-      <div class="title">DIL SE <span class="heart">❤️</span></div>
-      <div class="subtitle">The Voice of My Heart...</div>
+      <div class="title">
+        <span class="rainbow-text">DIL SE</span>
+        <span class="rainbow-heart">♥</span>
+      </div>
+      <div class="subtitle-box">The Voice of My Heart...</div>
       <nav class="top-nav">
         <a href="index.html">Home</a>
         <a href="shabd-majhe.html">शब्द माझे</a>
