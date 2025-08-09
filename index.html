@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DIL SE - The Voice of My Heart</title>
+  <title>DIL SE – The Voice of My Heart</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter&display=swap" rel="stylesheet">
   <style>
     body {
@@ -53,21 +53,46 @@
       color: darkmagenta;
     }
 
-    .poem {
+    .main-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .poem-list {
+      max-width: 700px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .poem-list a {
+      display: block;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      color: darkmagenta;
+      font-weight: bold;
+    }
+
+    .poem-view {
+      display: none;
+      max-width: 700px;
+      margin: auto;
       background: #fff;
       padding: 1.5rem;
-      margin: 1rem auto;
-      max-width: 700px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       white-space: pre-line;
     }
 
-    .signature {
-      text-align: right;
-      font-family: 'Great Vibes', cursive;
-      font-size: 1.2rem;
-      margin-top: 1rem;
+    .back-home {
+      display: block;
+      margin-bottom: 1rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
@@ -83,43 +108,62 @@
 <header>
   <nav>
     <a href="#home">Home</a>
-    <a href="#hindi">मेरे अल्फ़ाज़</a>
-    <a href="#english">My Words</a>
     <a href="#marathi">शब्द माझे</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#hindi">अल्फ़ाज़ हमारे</a>
+    <a href="#english">My Words</a>
   </nav>
 </header>
 
 <section id="home">
   <div class="title">DIL SE ❤️</div>
   <p style="text-align:center; font-size:1.2rem;">The Voice of My Heart...</p>
-</section>
-
-<section id="hindi">
-  <div class="title">मेरे अल्फ़ाज़</div>
-  <div class="poem">
-    वो Hi कहके यू ही चले गए...  
-    <div class="signature">— Rohit</div>
-  </div>
-  <!-- Add more Hindi poems here -->
-</section>
-
-<section id="english">
-  <div class="title">My Words</div>
-  <div class="poem">
-    The depth of your eyes  
-    My mind mesmerise...  
-    <div class="signature">— Rohit</div>
-  </div>
+  <img src="assets/splash.jpg" alt="Poetic splash image" class="main-image" />
 </section>
 
 <section id="marathi">
   <div class="title">शब्द माझे</div>
-  <div class="poem">
-    मला आवडतं एकटं राहणं...  
-    <div class="signature">— Rohit</div>
+  <div class="poem-list">
+    <a href="#poem-marathi-1" onclick="showPoem('poem-marathi-1')">मला आवडतं एकटं राहणं...</a>
   </div>
+</section>
+
+<section id="hindi">
+  <div class="title">अल्फ़ाज़ हमारे</div>
+  <div class="poem-list">
+    <a href="#poem-hindi-1" onclick="showPoem('poem-hindi-1')">वो Hi कहके यू ही चले गए...</a>
+  </div>
+</section>
+
+<section id="english">
+  <div class="title">My Words</div>
+  <div class="poem-list">
+    <a href="#poem-english-1" onclick="showPoem('poem-english-1')">The depth of your eyes...</a>
+  </div>
+</section>
+
+<!-- Individual Poem Views -->
+<section id="poem-marathi-1" class="poem-view">
+  <a href="#home" class="back-home">← Back to Home</a>
+  मला आवडतं एकटं राहणं...  
+  <div class="signature">— Rohit</div>
+</section>
+
+<section id="poem-hindi-1" class="poem-view">
+  <a href="#home" class="back-home">← Back to Home</a>
+  वो Hi कहके यू ही चले गए...  
+  <div class="signature">— Rohit</div>
+</section>
+
+<section id="poem-english-1" class="poem-view">
+  <a href="#home" class="back-home">← Back to Home</a>
+  The depth of your eyes  
+  My mind mesmerise...  
+  <div class="signature">— Rohit</div>
+</section>
+
+<section id="contact">
+  <div class="title">Contact</div>
+  <p style="text-align:center;">Want to connect or share your thoughts? Reach me at: <strong>rohitphy79@gmail.com</strong></p>
 </section>
 
 <section id="about">
@@ -129,57 +173,17 @@
   </p>
 </section>
 
-<section id="contact">
-  <div class="title">Contact</div>
-  <p style="text-align:center;">Want to connect or share your thoughts? Reach me at: <strong>rohitphy79@gmail.com</strong></p>
-</section>
-
 <footer>
   © 2025 DIL SE — Created with ❤️ by Rohit
 </footer>
 
-</body>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dil Se – Poetry from the Heart</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <header>
-    <h1>Dil Se</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#poems">Poems</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-  </header>
+<script>
+  function showPoem(id) {
+    document.querySelectorAll('.poem-view').forEach(el => el.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.location.hash = id;
+  }
+</script>
 
-  <main>
-    <section id="home" class="fade-in">
-      <h2>The Voice of My Heart</h2>
-      <img src="assets/splash.jpg" alt="Poetic splash image" class="main-image" />
-      <p>Welcome to my world of words — where emotions find rhythm and silence speaks.</p>
-    </section>
-
-    <section id="poems">
-      <h2>Featured Poems</h2>
-      <p>Coming soon...</p>
-    </section>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I write in Hindi, English, and Marathi — weaving emotions into verses that speak from the soul.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Rohit | Dil Se</p>
-  </footer>
 </body>
 </html>
