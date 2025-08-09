@@ -2,74 +2,207 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Poetry Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>DIL SE – The Voice of My Heart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
     body {
+      margin: 0;
       font-family: 'Georgia', serif;
       background-color: #fdf6f0;
       color: #333;
-      padding: 2em;
-      text-align: center;
     }
 
-    h1 {
-      color: #8e44ad;
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url('assets/1000104438.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      color: white;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      margin-top: 4vh;
+    }
+
+    .title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      font-weight: bold;
+      animation: rainbowPulse 6s infinite linear;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 0 white, -2px -2px 0 black;
+      letter-spacing: 2px;
       margin-bottom: 0.5em;
     }
 
-    p {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
+    .subtitle {
+      font-size: 1.5rem;
+      color: purple;
+      text-shadow: 1px 1px 0 white, -1px -1px 0 black;
       margin-bottom: 2em;
     }
 
-    li {
-      margin: 0.5em 0;
+    nav.top-nav, nav.bottom-nav {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      z-index: 2;
     }
 
-    a {
+    nav.bottom-nav {
+      margin-bottom: 3vh;
+    }
+
+    nav a {
       text-decoration: none;
-      color: #2980b9;
+      color: #fff;
       font-weight: bold;
+      font-size: 1.2rem;
+      padding: 0.5em 1em;
+      border: 2px solid white;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background-color: rgba(0,0,0,0.3);
     }
 
-    a:hover {
-      text-decoration: underline;
+    nav a:hover {
+      background-color: white;
+      color: darkmagenta;
+      transform: scale(1.1);
+      border-color: black;
     }
 
-    .image-container {
-      width: 100%;
+    .info-section {
+      display: none;
+      background-color: #fff;
+      color: #333;
+      padding: 2em;
       text-align: center;
+      font-size: 1.1rem;
+      border-top: 4px solid darkmagenta;
     }
 
-    .hero-image {
-      max-width: 100%;
-      height: auto;
+    .info-section.active {
       display: block;
-      margin: 0 auto;
-      border-radius: 10px;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .social-line {
+      opacity: 0;
+      animation: fadeInLine 1s ease forwards;
+    }
+
+    .social-line:nth-child(1) { animation-delay: 0.3s; }
+    .social-line:nth-child(2) { animation-delay: 0.6s; }
+    .social-line:nth-child(3) { animation-delay: 0.9s; }
+
+    @keyframes rainbowPulse {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInLine {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 2.5rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+      nav a {
+        font-size: 1rem;
+        padding: 0.4em 0.8em;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to My Poetry</h1>
-  <p>Select a language to explore:</p>
-  <ul>
-    <li><a href="shabd-majhe.html">मराठी</a></li>
-    <li><a href="alfaz-hamare.html">हिंदी</a></li>
-    <li><a href="my-words.html">English</a></li>
-  </ul>
-
-  <div class="image-container">
-    <img src="assets/1000104438.jpg" alt="Poetry Banner" class="hero-image" />
+  <div class="hero-section">
+    <div class="overlay"></div>
+    <div class="header-content">
+      <div class="title">DIL SE ❤️</div>
+      <div class="subtitle">The Voice of My Heart...</div>
+      <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="shabd-majhe.html">शब्द माझे</a>
+        <a href="alfaz-hamare.html">अल्फ़ाज़ हमारे</a>
+        <a href="my-words.html">My Words</a>
+      </nav>
+    </div>
+    <nav class="bottom-nav">
+      <a href="#" onclick="showSection('about')">About Me</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+      <a href="#" onclick="showSection('follow')">Follow Me</a>
+    </nav>
   </div>
+
+  <div id="about" class="info-section">
+    <h2>About Me</h2>
+    <p>[Your poetic bio will go here]</p>
+  </div>
+
+  <div id="contact" class="info-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
+    <p>Mobile: +44 7721714024</p>
+  </div>
+
+  <div id="follow" class="info-section">
+    <h2>Follow Me</h2>
+    <p class="social-line">Instagram: [Your ID]</p>
+    <p class="social-line">Facebook: [Your ID]</p>
+    <p class="social-line">LinkedIn: [Your ID]</p>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.info-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      const selected = document.getElementById(id);
+      selected.classList.add('active');
+
+      if (id === 'follow') {
+        const lines = selected.querySelectorAll('.social-line');
+        lines.forEach(line => line.style.opacity = '0'); // reset
+        lines.forEach(line => line.classList.remove('social-line')); // retrigger animation
+        void selected.offsetWidth; // force reflow
+        lines.forEach(line => line.classList.add('social-line'));
+      }
+    }
+  </script>
 
 </body>
 </html>
