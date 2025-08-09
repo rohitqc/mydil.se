@@ -5,11 +5,36 @@
   <title>DIL SE – The Voice of My Heart</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-color: #fdf6f0;
+      --text-color: #333;
+      --nav-bg: rgba(0,0,0,0.3);
+      --nav-hover-bg: white;
+      --nav-hover-text: darkmagenta;
+      --subtitle-bg: rgba(173, 216, 230, 0.8);
+      --subtitle-text: purple;
+      --info-bg: #fff;
+      --info-text: #333;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --nav-bg: rgba(255,255,255,0.1);
+      --nav-hover-bg: #333;
+      --nav-hover-text: #fdf6f0;
+      --subtitle-bg: rgba(30, 144, 255, 0.3);
+      --subtitle-text: #add8e6;
+      --info-bg: #1e1e1e;
+      --info-text: #ccc;
+    }
+
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background-color: #fdf6f0;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .hero-section {
@@ -70,8 +95,8 @@
     }
 
     .subtitle-box {
-      background-color: rgba(173, 216, 230, 0.8); /* light blue with transparency */
-      color: purple;
+      background-color: var(--subtitle-bg);
+      color: var(--subtitle-text);
       padding: 1em 2em;
       border-radius: 10px;
       font-size: 1.5rem;
@@ -101,24 +126,25 @@
       border: 2px solid white;
       border-radius: 8px;
       transition: all 0.3s ease;
-      background-color: rgba(0,0,0,0.3);
+      background-color: var(--nav-bg);
     }
 
     nav a:hover {
-      background-color: white;
-      color: darkmagenta;
+      background-color: var(--nav-hover-bg);
+      color: var(--nav-hover-text);
       transform: scale(1.1);
       border-color: black;
     }
 
     .info-section {
       display: none;
-      background-color: #fff;
-      color: #333;
+      background-color: var(--info-bg);
+      color: var(--info-text);
       padding: 2em;
       text-align: center;
       font-size: 1.1rem;
       border-top: 4px solid darkmagenta;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .info-section.active {
@@ -145,6 +171,26 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .dark-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      background: var(--nav-bg);
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      padding: 0.5em;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      background: var(--nav-hover-bg);
+      color: var(--nav-hover-text);
+    }
+
     @media (max-width: 600px) {
       .title {
         font-size: 3rem;
@@ -162,6 +208,8 @@
 </head>
 <body>
 
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
   <div class="hero-section">
     <div class="overlay"></div>
     <div class="header-content">
@@ -169,56 +217,4 @@
         <span class="rainbow-text">DIL SE</span>
         <span class="rainbow-heart">♥</span>
       </div>
-      <div class="subtitle-box">The Voice of My Heart...</div>
-      <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="shabd-majhe.html">शब्द माझे</a>
-        <a href="alfaz-hamare.html">अल्फ़ाज़ हमारे</a>
-        <a href="my-words.html">My Words</a>
-      </nav>
-    </div>
-    <nav class="bottom-nav">
-      <a href="#" onclick="showSection('about')">About Me</a>
-      <a href="#" onclick="showSection('contact')">Contact</a>
-      <a href="#" onclick="showSection('follow')">Follow Me</a>
-    </nav>
-  </div>
-
-  <div id="about" class="info-section">
-    <h2>About Me</h2>
-    <p>[Your poetic bio will go here]</p>
-  </div>
-
-  <div id="contact" class="info-section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
-    <p>Mobile: +44 7721714024</p>
-  </div>
-
-  <div id="follow" class="info-section">
-    <h2>Follow Me</h2>
-    <p class="social-line">Instagram: [Your ID]</p>
-    <p class="social-line">Facebook: [Your ID]</p>
-    <p class="social-line">LinkedIn: [Your ID]</p>
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.info-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      const selected = document.getElementById(id);
-      selected.classList.add('active');
-
-      if (id === 'follow') {
-        const lines = selected.querySelectorAll('.social-line');
-        lines.forEach(line => line.style.opacity = '0'); // reset
-        lines.forEach(line => line.classList.remove('social-line')); // retrigger animation
-        void selected.offsetWidth; // force reflow
-        lines.forEach(line => line.classList.add('social-line'));
-      }
-    }
-  </script>
-
-</body>
-</html>
+      <div class="subtitle
