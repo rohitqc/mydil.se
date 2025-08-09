@@ -45,21 +45,28 @@
 
     .title {
       font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
+      font-size: 5rem;
       font-weight: bold;
       animation: rainbowPulse 6s infinite linear;
       background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 0 white, -2px -2px 0 black;
-      letter-spacing: 2px;
+      text-shadow: 3px 3px 0 white, -3px -3px 0 black;
+      letter-spacing: 3px;
       margin-bottom: 0.5em;
     }
 
+    .title span.heart {
+      animation: rainbowPulse 6s infinite linear;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     .subtitle {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: purple;
-      text-shadow: 1px 1px 0 white, -1px -1px 0 black;
+      text-shadow: 0 0 8px orange, 0 0 12px yellow;
       margin-bottom: 2em;
     }
 
@@ -135,7 +142,7 @@
 
     @media (max-width: 600px) {
       .title {
-        font-size: 2.5rem;
+        font-size: 3rem;
       }
       .subtitle {
         font-size: 1rem;
@@ -152,7 +159,7 @@
   <div class="hero-section">
     <div class="overlay"></div>
     <div class="header-content">
-      <div class="title">DIL SE ❤️</div>
+      <div class="title">DIL SE <span class="heart">❤️</span></div>
       <div class="subtitle">The Voice of My Heart...</div>
       <nav class="top-nav">
         <a href="index.html">Home</a>
