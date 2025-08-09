@@ -2,188 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DIL SE – The Voice of My Heart</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIL SE</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f7f7f7;
-      scroll-behavior: smooth;
+      font-family: 'Georgia', serif;
+      background-color: #fdf6f0;
+      color: #333;
     }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
+      background-color: #fff;
+      padding: 1em;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
     nav a {
+      margin: 0 1em;
       text-decoration: none;
+      color: #c0392b;
       font-weight: bold;
-      color: #333;
-      transition: color 0.3s ease;
     }
-
-    nav a:hover {
-      color: darkmagenta;
-    }
-
-    section {
-      padding: 6rem 2rem 3rem;
-      min-height: 100vh;
-    }
-
-    .title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
+    .header {
       text-align: center;
-      margin-bottom: 1rem;
-      color: darkmagenta;
+      padding: 3em 1em;
+      background: url('1000104438.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
-
-    .main-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 2rem auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    .header h1 {
+      font-size: 3em;
+      margin: 0;
     }
-
-    .poem-list {
-      max-width: 700px;
-      margin: auto;
-      padding: 1rem;
+    .header p {
+      font-size: 1.2em;
+      margin-top: 0.5em;
     }
-
-    .poem-list a {
-      display: block;
-      margin: 0.5rem 0;
-      text-decoration: none;
-      color: darkmagenta;
-      font-weight: bold;
-    }
-
-    .poem-view {
-      display: none;
-      max-width: 700px;
-      margin: auto;
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      white-space: pre-line;
-    }
-
-    .back-home {
-      display: block;
-      margin-bottom: 1rem;
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
+    .content {
       text-align: center;
-      padding: 2rem;
-      background: #eee;
-      font-size: 0.9rem;
+      padding: 2em;
+    }
+    .content p {
+      font-size: 1.1em;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
-<header>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#marathi">शब्द माझे</a>
-    <a href="#hindi">अल्फ़ाज़ हमारे</a>
-    <a href="#english">My Words</a>
+    <a href="index.html">Home</a>
+    <a href="shabd-majhe.html">शब्द माझे</a>
+    <a href="alfaz-hamare.html">अल्फ़ाज़ हमारे</a>
+    <a href="my-words.html">My Words</a>
   </nav>
-</header>
 
-<section id="home">
-  <div class="title">DIL SE ❤️</div>
-  <p style="text-align:center; font-size:1.2rem;">The Voice of My Heart...</p>
-  <img src="assets/1000104438.jpg" alt="Poetic splash image" class="main-image" />
-</section>
-
-<section id="marathi">
-  <div class="title">शब्द माझे</div>
-  <div class="poem-list">
-    <a href="#poem-marathi-1" onclick="showPoem('poem-marathi-1')">मला आवडतं एकटं राहणं...</a>
+  <div class="header">
+    <h1>DIL SE ❤️</h1>
+    <p>The Voice of My Heart...</p>
   </div>
-</section>
 
-<section id="hindi">
-  <div class="title">अल्फ़ाज़ हमारे</div>
-  <div class="poem-list">
-    <a href="#poem-hindi-1" onclick="showPoem('poem-hindi-1')">वो Hi कहके यू ही चले गए...</a>
+  <div class="content">
+    <p>Welcome to my poetic sanctuary. Choose a language above to explore heartfelt verses.</p>
   </div>
-</section>
-
-<section id="english">
-  <div class="title">My Words</div>
-  <div class="poem-list">
-    <a href="#poem-english-1" onclick="showPoem('poem-english-1')">The depth of your eyes...</a>
-  </div>
-</section>
-
-<!-- Individual Poem Views -->
-<section id="poem-marathi-1" class="poem-view">
-  <a href="#home" class="back-home">← Back to Home</a>
-  मला आवडतं एकटं राहणं...  
-  <div class="signature">— Rohit</div>
-</section>
-
-<section id="poem-hindi-1" class="poem-view">
-  <a href="#home" class="back-home">← Back to Home</a>
-  वो Hi कहके यू ही चले गए...  
-  <div class="signature">— Rohit</div>
-</section>
-
-<section id="poem-english-1" class="poem-view">
-  <a href="#home" class="back-home">← Back to Home</a>
-  The depth of your eyes  
-  My mind mesmerise...  
-  <div class="signature">— Rohit</div>
-</section>
-
-<section id="contact">
-  <div class="title">Contact</div>
-  <p style="text-align:center;">Want to connect or share your thoughts? Reach me at: <strong>rohitphy79@gmail.com</strong></p>
-</section>
-
-<section id="about">
-  <div class="title">About Me</div>
-  <p style="max-width:700px; margin:auto; font-size:1.1rem;">
-    I'm Rohit — Physics teacher and poet. This space is my heart’s canvas, where my words bloom in Hindi, English, and Marathi. I write to feel, to reflect, and to connect.
-  </p>
-</section>
-
-<footer>
-  © 2025 DIL SE — Created with ❤️ by Rohit
-</footer>
-
-<script>
-  function showPoem(id) {
-    document.querySelectorAll('.poem-view').forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-    window.location.hash = id;
-  }
-</script>
 
 </body>
 </html>
