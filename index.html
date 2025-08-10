@@ -253,3 +253,32 @@
   <script>
     function showSection(id) {
       document.querySelector
+<script>
+  function showSection(id) {
+    // Hide all info sections
+    document.querySelectorAll('.info-section').forEach(section => {
+      section.classList.remove('active');
+    });
+
+    // Show the selected section
+    const selected = document.getElementById(id);
+    if (selected) {
+      selected.classList.add('active');
+
+      // Trigger fade-in for social lines if it's the follow section
+      if (id === 'follow') {
+        const lines = selected.querySelectorAll('.social-line');
+        lines.forEach(line => {
+          line.style.opacity = '0'; // reset
+          line.classList.remove('social-line'); // remove to retrigger
+          void line.offsetWidth; // force reflow
+          line.classList.add('social-line'); // re-add for animation
+        });
+      }
+    }
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
