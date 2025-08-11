@@ -207,6 +207,25 @@
     }
   </style>
 </head>
+  <script>
+  function showSection(id) {
+    // Hide all info sections
+    document.querySelectorAll('.info-section').forEach(section => {
+      section.classList.remove('active');
+    });
+
+    // Show the selected section
+    const selected = document.getElementById(id);
+    if (selected) {
+      selected.classList.add('active');
+    }
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
 <body>
 
   <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
