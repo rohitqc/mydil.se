@@ -155,11 +155,23 @@
     .social-line {
       opacity: 0;
       animation: fadeInLine 1s ease forwards;
+      margin-top: 1em;
     }
 
     .social-line:nth-child(1) { animation-delay: 0.3s; }
     .social-line:nth-child(2) { animation-delay: 0.6s; }
     .social-line:nth-child(3) { animation-delay: 0.9s; }
+
+    .social-icon {
+      height: 40px;
+      margin: 0 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 6px violet);
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -240,45 +252,4 @@
   <div id="contact" class="info-section">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
-    <p>Mobile: +44 7721714024</p>
-  <div class="social-line">
-  <a href="https://www.facebook.com/share/1G5T5PRyz2/" target="_blank" title="Facebook">
-    <img src="assets/facebook-icon.png" alt="Facebook" class="social-icon">
-  </a>
-  <a href="https://www.linkedin.com/in/rohit-nale-a5bb37233" target="_blank" title="LinkedIn">
-    <img src="assets/linkedin-icon.png" alt="LinkedIn" class="social-icon">
-  </a>
-  <a href="https://www.instagram.com/ilphy79_rohit" target="_blank" title="Instagram">
-    <img src="assets/instagram-icon.png" alt="Instagram" class="social-icon">
-  </a>
-</div>
-
-<script>
-  function showSection(id) {
-    // Hide all info sections
-    document.querySelectorAll('.info-section').forEach(section => {
-      section.classList.remove('active');
-    });
-
-    // Show the selected section
-    const selected = document.getElementById(id);
-    if (selected) {
-      selected.classList.add('active');
-
-      // Trigger fade-in for social lines if it's the follow section
-      if (id === 'follow') {
-        const lines = selected.querySelectorAll('.social-line');
-        lines.forEach(line => {
-          line.style.opacity = '0'; // reset
-          line.classList.remove('social-line'); // remove to retrigger
-          void line.offsetWidth; // force reflow
-          line.classList.add('social-line'); // re-add for animation
-        });
-      }
-    }
-  }
-
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
-</script>
+    <p
