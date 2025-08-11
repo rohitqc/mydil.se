@@ -68,3 +68,23 @@ ul li a:hover {
 .social-icon:hover {
   transform: scale(1.1);
 }
+a.back-home,
+a.back-shabd-majhe {
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0.6em 1.2em;
+  font-size: 1.1em;
+  font-family: 'Marathi', sans-serif; /* Use your preferred font */
+  color: #fff;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+a.back-home:hover,
+a.back-shabd-majhe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
