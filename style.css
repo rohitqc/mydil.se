@@ -40,8 +40,7 @@ h1 {
 }
 
 /* Navigation Links */
-a.back-home,
-a.back-shabd-majhe {
+a.back-home {
   display: inline-block;
   margin: 1em 0;
   padding: 0.6em 1.2em;
@@ -54,6 +53,12 @@ a.back-shabd-majhe {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+a.back-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 a.back-home:hover,
 a.back-shabd-majhe:hover {
