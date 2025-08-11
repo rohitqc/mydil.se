@@ -47,3 +47,13 @@ ul li a:hover {
   font-weight: bold;
   color: #333;
 }
+.social-icon {
+  height: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px violet);
+}
