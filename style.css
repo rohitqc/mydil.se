@@ -140,3 +140,13 @@ ul li a:hover {
   z-index: 1000;
   opacity: 0.9;
 }
+<img src="images/logo-top-right.png" alt="Poetic Logo" class="corner-logo">
+.corner-logo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  z-index: 1000; /* Keeps it above other elements */
+  opacity: 0.9; /* Slight transparency if desired */
+}
