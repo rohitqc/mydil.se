@@ -135,3 +135,13 @@ ul li a:hover {
     padding: 8px 12px;
   }
 }
+ul li a {
+  text-decoration: none;
+  color: #006699;
+  font-size: 1.5em;
+  font-family: 'Great Vibes', cursive;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
