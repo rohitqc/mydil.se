@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DIL SE – The Voice of My Heart</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
+    /* Root Variables */
     :root {
       --bg-color: #fdf6f0;
       --text-color: #333;
@@ -18,24 +18,13 @@
       --info-text: #333;
     }
 
-    body.dark-mode {
-      --bg-color: #121212;
-      --text-color: #eee;
-      --nav-bg: rgba(255,255,255,0.1);
-      --nav-hover-bg: #333;
-      --nav-hover-text: #fdf6f0;
-      --subtitle-bg: rgba(30, 144, 255, 0.3);
-      --subtitle-text: #add8e6;
-      --info-bg: #1e1e1e;
-      --info-text: #ccc;
-    }
-
     body {
       margin: 0;
       font-family: 'Georgia', serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
     }
 
     .hero-section {
@@ -51,6 +40,7 @@
       justify-content: space-between;
       text-align: center;
       color: white;
+      overflow: hidden;
     }
 
     .overlay {
@@ -158,24 +148,19 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .dark-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 10;
-      background: var(--nav-bg);
-      color: white;
-      border: none;
-      font-size: 1.5rem;
-      padding: 0.5em;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .social-line {
+      margin-top: 1em;
     }
 
-    .dark-toggle:hover {
-      background: var(--nav-hover-bg);
-      color: var(--nav-hover-text);
+    .social-icon {
+      height: 40px;
+      margin: 0 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 6px violet);
     }
 
     @media (max-width: 600px) {
@@ -183,12 +168,45 @@
       .subtitle-box { font-size: 1rem; padding: 0.5em 1em; }
       nav a { font-size: 1rem; padding: 0.4em 0.8em; }
     }
+
+    /* Logo Top Right */
+    .logo-top-right {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      width: 120px;
+      height: auto;
+    }
+
+    /* Falling Animation */
+    .falling {
+      position: absolute;
+      top: -50px;
+      animation: fall 10s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
   </style>
 </head>
 
 <body>
-  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+  <!-- Logo -->
+  <img src="assets/Copilot_20250811_222427.png" alt="Logo" class="logo-top-right" />
 
+  <!-- Falling Leaves and Hearts -->
+  <img src="assets/leaf.png" class="falling" style="left: 10%;" />
+  <img src="assets/leaf.png" class="falling" style="left: 30%; animation-delay: 2s;" />
+  <img src="assets/leaf.png" class="falling" style="left: 50%; animation-delay: 4s;" />
+  <img src="assets/heart.png" class="falling" style="left: 70%; animation-delay: 1s;" />
+  <img src="assets/heart.png" class="falling" style="left: 90%; animation-delay: 3s;" />
+
+  <!-- Hero Section -->
   <div class="hero-section">
     <div class="overlay"></div>
     <div class="header-content">
@@ -211,6 +229,7 @@
     </nav>
   </div>
 
+  <!-- Info Sections -->
   <div id="about" class="info-section">
     <h2>About Me</h2>
     <p>[Your poetic bio will go here]</p>
@@ -224,23 +243,7 @@
 
   <div id="follow" class="info-section">
     <h2>Follow Me</h2>
-    <p>Connect with me on social media.</p>
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.info-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      const selected = document.getElementById(id);
-      if (selected) {
-        selected.classList.add('active');
-      }
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
-</body>
-</html>
+    <div class="social-line">
+      <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
+        <img src="assets/facebook-icon.png1" alt="Facebook" class="social-icon">
+      </a>
