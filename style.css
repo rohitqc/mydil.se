@@ -64,7 +64,7 @@ body {
 .rainbow-text, .rainbow-heart {
   font-family: 'Great Vibes', cursive;
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 400% 400%;
+  background-size: 800% 800%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientShift 6s ease infinite;
@@ -156,7 +156,7 @@ nav a:hover {
 
 .falling-elements span {
   position: absolute;
-  font-size: 2rem;
+  font-size: 6rem;
   color: rgba(255, 255, 255, 0.2);
   animation: fall 10s linear infinite;
 }
@@ -168,10 +168,10 @@ nav a:hover {
 
 @media (max-width: 600px) {
   .title {
-    font-size: 3rem;
+    font-size: 6rem;
   }
   .subtitle-box {
-    font-size: 1rem;
+    font-size: 3rem;
     padding: 0.5em 1em;
   }
   nav a {
@@ -179,6 +179,6 @@ nav a:hover {
     padding: 0.4em 0.8em;
   }
   .site-logo {
-    height: 50px;
+    height: 100px;
   }
 }
