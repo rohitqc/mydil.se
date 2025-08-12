@@ -130,3 +130,18 @@ ul li a:hover {
   z-index: 1000;
   opacity: 0.9;
 }
+body {
+  background-image: url('old-page-bg.jpg'); /* Update with your actual path */
+  background-size: cover;                  /* Ensures it fills the entire screen */
+  background-repeat: no-repeat;            /* Prevents tiling */
+  background-position: center center;      /* Keeps it centered */
+  background-attachment: fixed;            /* Keeps it static while scrolling */
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.6); /* Soft white overlay */
+  z-index: -1;
+}
