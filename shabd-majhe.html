@@ -51,6 +51,12 @@
       height: auto;
       z-index: 1000;
       opacity: 0.9;
+      transition: all 0.3s ease;
+    }
+
+    .corner-logo:hover {
+      opacity: 1;
+      transform: scale(1.05);
     }
 
     .back-home {
@@ -104,7 +110,9 @@
 </head>
 
 <body>
-  <img src="logo.png" alt="Poetic Logo" class="corner-logo">
+  <a href="index.html">
+    <img src="assets/logo.png" alt="Poetic Logo" class="corner-logo">
+  </a>
 
   <div class="poem-background">
     <div class="poem-content">
