@@ -1,43 +1,168 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>बाप्पा!</title>
-  <link rel="stylesheet" href="../../style.css" />
-</head>
-<body>
-  <a href="../../index.html">
-    <img src="../../assets/Copilot_20250811_222427.png" alt="Poetic Logo" class="corner-logo">
-  </a>
 
-  <div class="poem-background">
-    <div class="poem-content">
-      <a href="javascript:history.back()" class="back-home">← Go Back</a>
-      <h1>बाप्पा!</h1>
-      <hr style="width: 50%; margin: 5em auto; border: 5px solid #ccc;">
-      
-      <div class="poem">
-        आतुरता या मनाला<br>
-        बाप्पा तुझ्या आगमनाची,<br>
-        उल्हास या मनामध्ये<br>
-        तयारी करताना तुझ्या स्वागताची,<br>
-        विघ्नहर्ता, दुःखहर्ता, तू सुखकर्ता <br>
-        ओढ आता फक्त<br>
-        मंगल मूर्तीच्या पदार्पणाची,<br>
-        ढोल-ताशा, टाळ- मृदुंग<br>
-        घंटा नाद समवेत,<br>
-        हे गणराया ऐक हाक या भक्तांची,<br>
-        सजली आता सारी सृष्टी,<br>
-        भरली थाळी तुझ्या आवडत्या मोदकानी,<br>
-        आरती करुनी घालितो लोटांगण,<br>
-        हे लंबोदर तुझ्या चरणी,<br>
-        एकच जल्लोष उठतो मनी,<br>
-        गणपती बाप्पा - मोरया !<br>
-        मंगल मूर्ती - मोरया !  
-        <div class="signature">— रोहित</div>
-      </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      background-color: #0f2027;
+      color: #fdf6f0;
+      overflow: hidden;
+    }
+
+    .poem-wrapper {
+      position: relative;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    .poem-title-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fdf6f0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: 'Great Vibes', cursive;
+      margin-bottom: 30px;
+    }
+
+    .poem-text {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px;
+      text-decoration: none;
+      background-color: #003366;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    .back-link:hover {
+      background-color: #002244;
+    }
+
+    /* Background animation */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .poem-wrapper {
+        margin: 30px 10px;
+        padding: 15px;
+      }
+
+      .poem-title-box {
+        font-size: 1.6rem;
+        padding: 8px 12px;
+      }
+
+      .poem-text {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .back-link {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <a href="../shabd-majhe.html" class="back-link">← परत</a>
+
+  <div class="poem-wrapper">
+    <div class="poem-title-box">बाप्पा!</div>
+
+    <div class="poem-text">
+      गणपती बाप्पा मोरया  
+      सुखकर्ता दुःखहर्ता  
+      लाडका देव माझा  
+      मनात घर केलेला  
+
+      दरवर्षी येतो आनंद घेऊन  
+      मोदकाचा गंध दरवळतो  
+      आरतीच्या सुरात भक्ती भरते  
+      आणि मन आनंदाने न्हालं जातं  
     </div>
   </div>
+
+  <!-- Background particles -->
+  <script>
+    const background = document.querySelector('.background');
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.width = `${Math.random() * 6 + 4}px`;
+      particle.style.height = particle.style.width;
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+      background.appendChild(particle);
+    }
+  </script>
+
+  <!-- Optional background music -->
+  <audio autoplay loop>
+    <source src="your-music-file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
