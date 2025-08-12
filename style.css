@@ -45,7 +45,7 @@ a.back-home {
   margin: 1em 0;
   padding: 0.6em 1.2em;
   font-size: 1.1em;
-  font-family: 'Marathi', sans-serif;
+  font-family: 'Noto Sans Devanagari', sans-serif;
   color: #fff;
   background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
   border-radius: 8px;
@@ -53,12 +53,6 @@ a.back-home {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-a.back-home:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
 
 a.back-home:hover,
 a.back-shabd-majhe:hover {
@@ -100,24 +94,12 @@ ul li a:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 0 6px violet);
 }
-/* Apply to poem pages and poem lists */
-.poem-background {
-  background-image: url('images/dilse-bg.png');
-  background-repeat: repeat;
-  background-size: 150px; /* Adjust size to your liking */
-  opacity: 0.05; /* Very subtle watermark effect */
-  position: relative;
-  z-index: 0;
-}
 
-/* Optional: make sure your content sits above the background */
-.poem-content {
-  position: relative;
-  z-index: 1;
-}
+/* Background Watermark */
 .poem-background {
   position: relative;
   z-index: 0;
+  min-height: 100vh;
 }
 
 .poem-background::before {
@@ -131,6 +113,14 @@ ul li a:hover {
   opacity: 0.05;
   z-index: -1;
 }
+
+/* Content Layer */
+.poem-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Top-Right Logo */
 .corner-logo {
   position: fixed;
   top: 10px;
@@ -139,14 +129,4 @@ ul li a:hover {
   height: auto;
   z-index: 1000;
   opacity: 0.9;
-}
-<img src="images/logo-top-right.png" alt="Poetic Logo" class="corner-logo">
-.corner-logo {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  width: 100px; /* Adjust size as needed */
-  height: auto;
-  z-index: 1000; /* Keeps it above other elements */
-  opacity: 0.9; /* Slight transparency if desired */
 }
