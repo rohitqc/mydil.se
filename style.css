@@ -5,7 +5,6 @@ body {
   color: #333;
   padding: 2em;
 
-  /* Background Image */
   background-image: url('assets/Copilot_20250812_092048.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -20,7 +19,7 @@ body::before {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(255, 255, 255, 0.6); /* Soft white veil */
+  background-color: rgba(255, 255, 255, 0.6);
   z-index: -1;
 }
 
@@ -112,28 +111,6 @@ ul li a:hover {
 .social-icon:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 0 6px violet);
-}
-
-/* Background Layer */
-body {
-  font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
-  background-color: #fdf6f0;
-  color: #333;
-  padding: 2em;
-
-  background-image: url('assets/Copilot_20250812_092048.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  position: relative;
-}
-
-/* Poem Section Container */
-.poem-background {
-  position: relative;
-  z-index: 0;
-  min-height: 100vh;
 }
 
 /* Content Layer */
