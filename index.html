@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>DIL SE – The Voice of My Heart</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Comic+Neue&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-color: #fdf6f0;
@@ -31,7 +31,7 @@
 
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
       background-color: var(--bg-color);
       color: var(--text-color);
       transition: background-color 0.4s ease, color 0.4s ease;
@@ -50,6 +50,7 @@
       justify-content: space-between;
       text-align: center;
       color: white;
+      overflow: hidden;
     }
 
     .overlay {
@@ -103,6 +104,14 @@
       margin-bottom: 2em;
       display: inline-block;
       text-shadow: 0 0 8px orange, 0 0 12px yellow;
+      animation: rotateBox 6s infinite ease-in-out;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    @keyframes rotateBox {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(1deg); }
+      100% { transform: rotate(0deg); }
     }
 
     nav.top-nav, nav.bottom-nav {
@@ -192,6 +201,46 @@
       color: var(--nav-hover-text);
     }
 
+    .logo-container {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      z-index: 3;
+    }
+
+    .site-logo {
+      height: 80px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .site-logo:hover {
+      transform: scale(1.1);
+    }
+
+    .falling-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .falling-elements span {
+      position: absolute;
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.2);
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { top: -10%; transform: rotate(0deg); }
+      100% { top: 110%; transform: rotate(360deg); }
+    }
+
     @media (max-width: 600px) {
       .title {
         font-size: 3rem;
@@ -204,75 +253,28 @@
         font-size: 1rem;
         padding: 0.4em 0.8em;
       }
+      .site-logo {
+        height: 50px;
+      }
     }
   </style>
 </head>
-  <script>
-  function showSection(id) {
-    // Hide all info sections
-    document.querySelectorAll('.info-section').forEach(section => {
-      section.classList.remove('active');
-    });
-
-    // Show the selected section
-    const selected = document.getElementById(id);
-    if (selected) {
-      selected.classList.add('active');
-    }
-  }
-
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
-</script>
-
 <body>
 
   <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
 
   <div class="hero-section">
     <div class="overlay"></div>
+    <div class="falling-elements">
+      <span style="left: 10%;">♥</span>
+      <span style="left: 30%; animation-delay: 2s;">🍂</span>
+      <span style="left: 50%; animation-delay: 4s;">♥</span>
+      <span style="left: 70%; animation-delay: 6s;">🍂</span>
+      <span style="left: 90%; animation-delay: 8s;">♥</span>
+    </div>
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="Site Logo" class="site-logo" />
+    </div>
     <div class="header-content">
       <div class="title">
-        <span class="rainbow-text">DIL SE</span>
-        <span class="rainbow-heart">♥</span>
-      </div>
-      <div class="subtitle-box">The Voice of My Heart...</div>
-      <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="shabd-majhe.html">शब्द माझे</a>
-        <a href="alfaz-hamare.html">अल्फ़ाज़ हमारे</a>
-        <a href="my-words.html">My Words</a>
-      </nav>
-    </div>
-    <nav class="bottom-nav">
-      <a href="#" onclick="showSection('about')">About Me</a>
-      <a href="#" onclick="showSection('contact')">Contact</a>
-      <a href="#" onclick="showSection('follow')">Follow Me</a>
-    </nav>
-  </div>
-
-  <div id="about" class="info-section">
-    <h2>About Me</h2>
-    <p>[Your poetic bio will go here]</p>
-  </div>
-
-  <div id="contact" class="info-section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
-    <p>Mobile: +44 7721714024</p>
-  </div>
-
-  <div id="follow" class="info-section">
-    <h2>Follow Me</h2>
-    <div class="social-line">
-      <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
-        <img src="assets/facebook-icon.png1" alt="Facebook" class="social-icon">
-      </a>
-      <a href="https://www.linkedin.com/in/rohit-nale-a5bb37233" target="_blank" title="LinkedIn">
-        <img src="assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon">
-      </a>
-   <a href="https://www.instagram.com/ilphy79_rohit" target="_blank" title="Instagram">
-  <img src="assets/instagram-icon.png1" alt="Instagram" class="social-icon">
-</a>
-
+        <span
