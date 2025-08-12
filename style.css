@@ -1,184 +1,152 @@
-:root {
-  --bg-color: #fdf6f0;
-  --text-color: #333;
-  --nav-bg: rgba(0,0,0,0.3);
-  --nav-hover-bg: white;
-  --nav-hover-text: darkmagenta;
-  --subtitle-bg: rgba(173, 216, 230, 0.8);
-  --subtitle-text: purple;
-  --info-bg: #fff;
-  --info-text: #333;
-}
-
+/* Base styles */
 body {
   margin: 0;
-  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+  background-color: #fff;
+  color: #222;
+  overflow-x: hidden;
 }
 
-.hero-section {
+/* Background container */
+.poem-background {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: url('assets/1000104438.jpg');
+  z-index: 0;
+  min-height: 100vh;
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* Animated background image */
+.poem-background::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('assets/Copilot_20250812_092048.png');
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
-  color: white;
-  overflow: hidden;
+  background-position: center center;
+  opacity: 0.2;
+  z-index: -1;
+  animation: zoomBackground 30s ease-in-out infinite;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: 1;
+/* Zoom animation */
+@keyframes zoomBackground {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-.header-content {
+/* Poem content with fade-in */
+.poem-content {
   position: relative;
-  z-index: 2;
-  margin-top: 4vh;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 2s ease-out;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 5rem;
-  font-weight: bold;
-  letter-spacing: 3px;
-  margin-bottom: 0.5em;
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.rainbow-text, .rainbow-heart {
-  font-family: 'Great Vibes', cursive;
-  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 800% 800%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 6s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.subtitle-box {
-  background-color: var(--subtitle-bg);
-  color: var(--subtitle-text);
-  padding: 1em 2em;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  margin-bottom: 2em;
-  display: inline-block;
-  text-shadow: 0 0 8px orange, 0 0 12px yellow;
-  animation: rotateBox 6s infinite ease-in-out;
-  font-family: 'Great Vibes', cursive;
-}
-
-@keyframes rotateBox {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(1deg); }
-  100% { transform: rotate(0deg); }
-}
-
-nav.top-nav, nav.bottom-nav {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  z-index: 2;
-}
-
-nav.bottom-nav {
-  margin-bottom: 3vh;
-}
-
-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.5em 1em;
-  border: 2px solid white;
-  border-radius: 8px;
+/* Logo in top-right corner */
+.corner-logo {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+  z-index: 1000;
+  opacity: 0.9;
   transition: all 0.3s ease;
-  background-color: var(--nav-bg);
 }
 
-nav a:hover {
-  background-color: var(--nav-hover-bg);
-  color: var(--nav-hover-text);
-  transform: scale(1.1);
-  border-color: black;
+.corner-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-.logo-container {
+/* Back to home button in top-left */
+.back-home {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #003366;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-home:hover {
+  background-color: #002244;
+}
+
+/* Typography and layout */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #006699;
+  font-size: 1.2em;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Falling Animation (added from homepage) */
+.falling {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
-  z-index: 3;
-}
-
-.site-logo {
-  height: 80px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.site-logo:hover {
-  transform: scale(1.1);
-}
-
-.falling-elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.falling-elements span {
-  position: absolute;
-  font-size: 6rem;
-  color: rgba(255, 255, 255, 0.2);
+  top: -50px;
   animation: fall 10s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes fall {
-  0% { top: -10%; transform: rotate(0deg); }
-  100% { top: 110%; transform: rotate(360deg); }
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
 
+/* Responsive styles */
 @media (max-width: 600px) {
-  .title {
-    font-size: 6rem;
+  .poem-content {
+    padding: 0 20px;
   }
-  .subtitle-box {
-    font-size: 3rem;
-    padding: 0.5em 1em;
+
+  h1 {
+    font-size: 2em;
   }
-  nav a {
-    font-size: 1rem;
-    padding: 0.4em 0.8em;
+
+  .corner-logo {
+    width: 80px;
   }
-  .site-logo {
-    height: 100px;
+
+  .back-home {
+    font-size: 0.9em;
+    padding: 8px 12px;
   }
 }
