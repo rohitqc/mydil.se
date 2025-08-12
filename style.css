@@ -145,3 +145,19 @@ ul li a {
 ul li a:hover {
   text-decoration: underline;
 }
+.signature {
+  text-align: right;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5em;
+  color: #444;
+  margin-top: 40px;
+  margin-right: 10px;
+  opacity: 0.8;
+  animation: fadeIn 2s ease-out;
+}
+
+.signature:hover {
+  opacity: 1;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
