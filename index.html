@@ -2,53 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DIL SE – The Voice of My Heart</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Comic+Neue&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Poetry World</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fdf6f0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      font-size: 2.5rem;
+      font-family: 'Great Vibes', cursive;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      font-size: 1.2rem;
+      background-color: rgba(255,255,255,0.05);
+    }
+
+    nav a {
+      color: #fdf6f0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.05);
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #fdf6f0;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffd700;
+    }
+
+    @media (max-width: 600px) {
+      nav, footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
+      header {
+        font-size: 2rem;
+      }
+
+      main {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header>Welcome to My Poetry World</header>
 
-  <div class="hero-section">
-    <div class="overlay"></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shabd-majhe.html">शब्द माझे</a>
+    <a href="alfaz-hamare.html">अल्फ़ाज़ हमारे</a>
+    <a href="my-words.html">My Words</a>
+  </nav>
 
-    <div class="falling-elements">
-      <span style="left: 10%;">♥</span>
-      <span style="left: 30%; animation-delay: 2s;">🍂</span>
-      <span style="left: 50%; animation-delay: 4s;">♥</span>
-      <span style="left: 70%; animation-delay: 6s;">🍂</span>
-      <span style="left: 90%; animation-delay: 8s;">♥</span>
-      <span style="left: 10%;">♥</span>
-      <span style="left: 30%; animation-delay: 2s;">🍂</span>
-      <span style="left: 50%; animation-delay: 4s;">♥</span>
-      <span style="left: 70%; animation-delay: 6s;">🍂</span>
-      <span style="left: 90%; animation-delay: 8s;">♥</span>
-    </div>
+  <main>
+    <p>Explore the beauty of words across languages and emotions.</p>
+  </main>
 
-    <div class="logo-container">
-      <img src="assets/Copilot_20250811_222427.png" alt="Site Logo" class="site-logo" />
-    </div>
-
-    <div class="header-content">
-      <div class="title">
-        <span class="rainbow-text">DIL SE</span>
-        <span class="rainbow-heart">♥</span>
-      </div>
-      <div class="subtitle-box">The Voice of My Heart</div>
-    </div>
-
-    <nav class="top-nav">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Gallery</a>
-      <a href="#">Contact</a>
-    </nav>
-
-    <nav class="bottom-nav">
-      <a href="#">Instagram</a>
-      <a href="#">YouTube</a>
-      <a href="#">Blog</a>
-    </nav>
-  </div>
-
+  <footer>
+    <a href="about.html">About me</a>
+    <a href="contact.html">Contact</a>
+    <a href="follow.html">Follow me</a>
+  </footer>
 </body>
 </html>
