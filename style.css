@@ -6,7 +6,7 @@ body {
   padding: 2em;
 
   /* Background Image */
-  background-image: url('old-page-bg.jpg'); /* Update with actual path */
+  background-image: url('assets/Copilot_20250812_092048.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -126,7 +126,7 @@ ul li a:hover {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-image: url('logo.png'); /* or any other subtle image */
+  background-image: url('assets/Copilot_20250811_222427.png');
   background-repeat: repeat;
   background-size: 150px;
   opacity: 0.05;
