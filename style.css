@@ -126,7 +126,7 @@ ul li a:hover {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-image: url('images/dilse-bg-devanagari.png');
+  background-image: url('logo.png'); /* or any other subtle image */
   background-repeat: repeat;
   background-size: 150px;
   opacity: 0.05;
