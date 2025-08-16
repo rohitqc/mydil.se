@@ -1,268 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
   <meta charset="UTF-8" />
-  <title>DIL SE – The Voice of My Heart</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg-color: #fdf6f0;
-      --text-color: #333;
-      --nav-bg: rgba(0,0,0,0.3);
-      --nav-hover-bg: white;
-      --nav-hover-text: darkmagenta;
-      --subtitle-bg: rgba(173, 216, 230, 0.8);
-      --subtitle-text: purple;
-      --info-bg: #fff;
-      --info-text: #333;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>बाप्पा!</title>
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.4s ease, color 0.4s ease;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      background-color: #0f2027;
+      color: #fdf6f0;
       overflow-x: hidden;
     }
 
-    .hero-section {
+    .poem-background {
       position: relative;
-      width: 100%;
-      height: 100vh;
-      background-image: url('assets/1000104438.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      text-align: center;
-      color: white;
-      overflow: hidden;
+      min-height: 100vh;
+      background: url('assets/Copilot_20250812_092048.png') center/cover no-repeat;
+      padding: 60px 20px;
     }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.4);
-      z-index: 1;
+    .logo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 80px;
+      height: auto;
+      z-index: 10;
     }
 
-    .header-content {
-      position: relative;
-      z-index: 2;
-      margin-top: 4vh;
-    }
-
-    .title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 5rem;
-      font-weight: bold;
-      letter-spacing: 3px;
-      margin-bottom: 0.5em;
-    }
-
-    .rainbow-text, .rainbow-heart {
-      font-family: 'Great Vibes', cursive;
-      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientShift 6s ease infinite;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .subtitle-box {
-      background-color: var(--subtitle-bg);
-      color: var(--subtitle-text);
-      padding: 1em 2em;
-      border-radius: 10px;
-      font-size: 1.5rem;
-      margin-bottom: 2em;
-      display: inline-block;
-      text-shadow: 0 0 8px orange, 0 0 12px yellow;
-    }
-
-    nav.top-nav, nav.bottom-nav {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      z-index: 2;
-    }
-
-    nav.bottom-nav {
-      margin-bottom: 3vh;
-    }
-
-    nav a {
-      text-decoration: none;
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #003366;
       color: #fff;
-      font-weight: bold;
-      font-size: 1.2rem;
-      padding: 0.5em 1em;
-      border: 2px solid white;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      background-color: var(--nav-bg);
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 10;
     }
 
-    nav a:hover {
-      background-color: var(--nav-hover-bg);
-      color: var(--nav-hover-text);
-      transform: scale(1.1);
-      border-color: black;
+    .back-button:hover {
+      background-color: #002244;
+    }
+
+    .poem-wrapper {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .poem-title-box {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ffddaa;
+    }
+
+    .poem-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+    }
+
+    .signature {
+      text-align: right;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #fdf6f0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .footer a {
+      color: #fdf6f0;
+      text-decoration: none;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .footer a:hover {
+      color: #ffcc00;
     }
 
     .info-section {
       display: none;
-      background-color: var(--info-bg);
-      color: var(--info-text);
-      padding: 2em;
-      text-align: center;
-      font-size: 1.1rem;
-      border-top: 4px solid darkmagenta;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    .info-section.active {
-      display: block;
-      animation: fadeIn 0.6s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .social-line {
-      margin-top: 1em;
-    }
-
-    .social-icon {
-      height: 40px;
-      width: 40px;
-      margin: 0 10px;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .social-icon:hover {
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 6px violet);
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     @media (max-width: 600px) {
-      .title { font-size: 3rem; }
-      .subtitle-box { font-size: 1rem; padding: 0.5em 1em; }
-      nav a { font-size: 1rem; padding: 0.4em 0.8em; }
-    }
+      .poem-wrapper {
+        padding: 20px;
+      }
 
-    .logo-top-right {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      z-index: 10;
-      width: 120px;
-      height: auto;
-    }
+      .poem-title-box {
+        font-size: 1.6rem;
+      }
 
-    .falling {
-      position: absolute;
-      top: -50px;
-      width: 40px;
-      height: auto;
-      animation: fall 10s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
+      .poem-text {
+        font-size: 1rem;
+      }
 
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      .logo {
+        width: 60px;
+      }
+
+      .back-button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+      }
+
+      .signature {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
-<script>
-  function showSection(id) {
-    const sections = document.querySelectorAll('.info-section');
-    sections.forEach(section => section.classList.remove('active'));
-    const target = document.getElementById(id);
-    if (target) {
-      target.classList.add('active');
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-</script>
 
 <body>
-  <img src="assets/Copilot_20250811_222427.png" alt="Logo" class="logo-top-right" />
+  <div class="poem-background">
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+    <div class="back-button" onclick="history.back()">← परत</div>
 
-  <!-- Falling Leaves and Hearts -->
-<img src="assets/leaf.png" class="falling" style="left: 10%;" />
-<img src="assets/leaf.png" class="falling" style="left: 30%; animation-delay: 2s;" />
-<img src="assets/leaf.png" class="falling" style="left: 50%; animation-delay: 4s;" />
-<img src="assets/heart.png" class="falling" style="left: 70%; animation-delay: 1s;" />
-<img src="assets/heart.png" class="falling" style="left: 90%; animation-delay: 3s;" />
+    <div class="poem-wrapper">
+      <div class="poem-title-box">बाप्पा!</div>
 
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <div class="overlay"></div>
-    <div class="header-content">
-      <div class="title">
-        <span class="rainbow-text">DIL SE</span>
-        <span class="rainbow-heart">♥</span>
+      <div class="poem-text">
+        आतुरता या मनाला  
+        बाप्पा तुझ्या आगमनाची,  
+        उल्हास या मनामध्ये  
+        तयारी करताना तुझ्या स्वागताची,  
+        विघ्नहर्ता, दुःखहर्ता, तू सुखकर्ता  
+        ओढ आता फक्त  
+        मंगल मूर्तीच्या पदार्पणाची,  
+        ढोल-ताशा, टाळ- मृदुंग  
+        घंटा नाद समवेत,  
+        हे गणराया ऐक हाक या भक्तांची,  
+        सजली आता सारी सृष्टी,  
+        भरली थाळी तुझ्या आवडत्या मोदकानी,  
+        आरती करुनी घालितो लोटांगण,  
+        हे लंबोदर तुझ्या चरणी,  
+        एकच जल्लोष उठतो मनी,  
+        गणपती बाप्पा - मोरया !  
+        मंगल मूर्ती - मोरया !
       </div>
-      <div class="subtitle-box">The Voice of My Heart...</div>
-      <nav class="top-nav">
-        <a href="index.html">Home</a>
-        <a href="shabd-majhe.html">शब्द माझे</a>
-        <a href="alfaz-hamare.html">अल्फ़ाज़ हमारे</a>
-        <a href="my-words.html">My Words</a>
-      </nav>
+
+      <div class="signature">— Rohit</div>
     </div>
-    <nav class="bottom-nav">
-      <a href="#" onclick="showSection('about')">About Me</a>
-      <a href="#" onclick="showSection('contact')">Contact</a>
-      <a href="#" onclick="showSection('follow')">Follow Me</a>
-    </nav>
+
+    <div class="footer">
+      <a onclick="toggleInfo('about')">About Me</a> |
+      <a onclick="toggleInfo('contact')">Contact</a> |
+      <a onclick="toggleInfo('follow')">Follow Me</a>
+    </div>
+
+    <div id="about" class="info-section">
+      <strong>About Me:</strong><br>
+      I'm Rohit, a science educator and poet passionate about Marathi, Hindi, and English verse. I blend visual storytelling with emotional depth to create a multilingual poetry platform.
+    </div>
+
+    <div id="contact" class="info-section">
+      <strong>Contact:</strong><br>
+      You can reach me via email at rohit@example.com or connect through my poetry site’s contact form.
+    </div>
+
+    <div id="follow" class="info-section">
+      <strong>Follow Me:</strong><br>
+      Join me on my creative journey via Instagram @rohit.poetry and Twitter @rohitwrites.
+    </div>
   </div>
 
-  <!-- Info Sections -->
-  <div id="about" class="info-section">
-    <h2>About Me</h2>
-    <p>[Your poetic bio will go here]</p>
-  </div>
-
-  <div id="contact" class="info-section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
-    <p>Mobile: +44 7721714024</p>
-  </div>
-
- <div id="follow" class="info-section">
-  <h2>Follow Me</h2>
-  <div class="social-line">
-    <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
-      <img src="assets/facebook-icon.png1" alt="Facebook" class="social-icon">
-    </a>
-    <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
-      <img src="assets/instagram-icon.png1" alt="Instagram" class="social-icon">
-    </a>
-    <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
-      <img src="assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon">
-    </a>
-  </div>
-</div>
-
+  <script>
+    function toggleInfo(id) {
+      const sections = document.querySelectorAll('.info-section');
+      sections.forEach(sec => {
+        sec.style.display = sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
