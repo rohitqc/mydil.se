@@ -145,3 +145,11 @@ ul li a:hover {
     padding: 8px 12px;
   }
 }
+.corner-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px; /* Increase this value */
+  height: auto;
+  z-index: 10;
+}
