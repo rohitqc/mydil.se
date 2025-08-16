@@ -54,20 +54,13 @@ body {
 }
 
 /* Logo in top-right corner */
-.corner-logo {
+.logo-top-right {
   position: fixed;
-  top: 10px;
-  right: 10px;
-  width: 100px;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 160px; /* Increased from 120px */
   height: auto;
-  z-index: 1000;
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-.corner-logo:hover {
-  opacity: 1;
-  transform: scale(1.05);
 }
 
 /* Back to home button in top-left */
