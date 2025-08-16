@@ -16,31 +16,58 @@
       background-color: #0f2027;
       color: #fdf6f0;
       overflow-x: hidden;
+    }
+
+    .poem-background {
       position: relative;
+      min-height: 100vh;
+      background: url('assets/Copilot_20250812_092048.png') center/cover no-repeat;
+      padding: 60px 20px;
+    }
+
+    .logo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 80px;
+      height: auto;
+      z-index: 10;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #003366;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      background-color: #002244;
     }
 
     .poem-wrapper {
-      position: relative;
       max-width: 800px;
-      margin: 60px auto;
-      padding: 20px;
-      background: url('assets/Copilot_20250812_092048.png') center/cover no-repeat;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px;
       border-radius: 10px;
-      z-index: 1;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
     }
 
     .poem-title-box {
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #fdf6f0;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
       font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      text-align: center;
       margin-bottom: 30px;
+      color: #ffddaa;
     }
 
     .poem-text {
@@ -49,118 +76,64 @@
       white-space: pre-wrap;
     }
 
-    .back-link {
-      display: inline-block;
-      margin: 20px;
-      text-decoration: none;
-      background-color: #003366;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 5px;
-      font-size: 1rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease;
-      z-index: 2;
-      position: relative;
-    }
-
-    .back-link:hover {
-      background-color: #002244;
-    }
-
-    .logo {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 80px;
-      height: auto;
-      z-index: 3;
-    }
-
     .signature {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
+      text-align: right;
       font-family: 'Great Vibes', cursive;
       font-size: 1.2rem;
+      margin-top: 20px;
       color: #fdf6f0;
-      z-index: 3;
     }
 
     .footer {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 40px;
       padding: 20px;
       font-size: 1rem;
       background-color: rgba(0, 0, 0, 0.4);
-      color: #fdf6f0;
     }
 
     .footer a {
       color: #fdf6f0;
       text-decoration: none;
       margin: 0 10px;
-      transition: color 0.3s ease;
+      cursor: pointer;
     }
 
     .footer a:hover {
       color: #ffcc00;
     }
 
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .particle {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      animation: float 20s linear infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1);
-        opacity: 0;
-      }
+    .info-section {
+      display: none;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     @media (max-width: 600px) {
       .poem-wrapper {
-        margin: 30px 10px;
-        padding: 15px;
+        padding: 20px;
       }
 
       .poem-title-box {
         font-size: 1.6rem;
-        padding: 8px 12px;
       }
 
       .poem-text {
         font-size: 1rem;
-        line-height: 1.4;
-      }
-
-      .back-link {
-        font-size: 0.9rem;
-        padding: 6px 10px;
       }
 
       .logo {
         width: 60px;
+      }
+
+      .back-button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
       }
 
       .signature {
@@ -171,55 +144,64 @@
 </head>
 
 <body>
-  <div class="background"></div>
+  <div class="poem-background">
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+    <div class="back-button" onclick="history.back()">← परत</div>
 
-  <img src="assets/logo.png" alt="Logo" class="logo" />
+    <div class="poem-wrapper">
+      <div class="poem-title-box">बाप्पा!</div>
 
-  <a href="../shabd-majhe.html" class="back-link">← परत</a>
+      <div class="poem-text">
+        आतुरता या मनाला  
+        बाप्पा तुझ्या आगमनाची,  
+        उल्हास या मनामध्ये  
+        तयारी करताना तुझ्या स्वागताची,  
+        विघ्नहर्ता, दुःखहर्ता, तू सुखकर्ता  
+        ओढ आता फक्त  
+        मंगल मूर्तीच्या पदार्पणाची,  
+        ढोल-ताशा, टाळ- मृदुंग  
+        घंटा नाद समवेत,  
+        हे गणराया ऐक हाक या भक्तांची,  
+        सजली आता सारी सृष्टी,  
+        भरली थाळी तुझ्या आवडत्या मोदकानी,  
+        आरती करुनी घालितो लोटांगण,  
+        हे लंबोदर तुझ्या चरणी,  
+        एकच जल्लोष उठतो मनी,  
+        गणपती बाप्पा - मोरया !  
+        मंगल मूर्ती - मोरया !
+      </div>
 
-  <div class="poem-wrapper">
-    <div class="poem-title-box">बाप्पा!</div>
+      <div class="signature">— Rohit</div>
+    </div>
 
-    <div class="poem-text">
-      आतुरता या मनाला  
-      बाप्पा तुझ्या आगमनाची,  
-      उल्हास या मनामध्ये  
-      तयारी करताना तुझ्या स्वागताची,  
-      विघ्नहर्ता, दुःखहर्ता, तू सुखकर्ता  
-      ओढ आता फक्त  
-      मंगल मूर्तीच्या पदार्पणाची,  
-      ढोल-ताशा, टाळ- मृदुंग  
-      घंटा नाद समवेत,  
-      हे गणराया ऐक हाक या भक्तांची,  
-      सजली आता सारी सृष्टी,  
-      भरली थाळी तुझ्या आवडत्या मोदकानी,  
-      आरती करुनी घालितो लोटांगण,  
-      हे लंबोदर तुझ्या चरणी,  
-      एकच जल्लोष उठतो मनी,  
-      गणपती बाप्पा - मोरया !  
-      मंगल मूर्ती - मोरया !
+    <div class="footer">
+      <a onclick="toggleInfo('about')">About Me</a> |
+      <a onclick="toggleInfo('contact')">Contact</a> |
+      <a onclick="toggleInfo('follow')">Follow Me</a>
+    </div>
+
+    <div id="about" class="info-section">
+      <strong>About Me:</strong><br>
+      I'm Rohit, a science educator and poet passionate about Marathi, Hindi, and English verse. I blend visual storytelling with emotional depth to create a multilingual poetry platform.
+    </div>
+
+    <div id="contact" class="info-section">
+      <strong>Contact:</strong><br>
+      You can reach me via email at rohit@example.com or connect through my poetry site’s contact form.
+    </div>
+
+    <div id="follow" class="info-section">
+      <strong>Follow Me:</strong><br>
+      Join me on my creative journey via Instagram @rohit.poetry and Twitter @rohitwrites.
     </div>
   </div>
 
-  <div class="signature">— Rohit</div>
-
-  <div class="footer">
-    <a href="../about.html">About Me</a> |
-    <a href="../contact.html">Contact</a> |
-    <a href="../follow.html">Follow Me</a>
-  </div>
-
   <script>
-    const background = document.querySelector('.background');
-    for (let i = 0; i < 50; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-      particle.style.width = `${Math.random() * 6 + 4}px`;
-      particle.style.height = particle.style.width;
-      particle.style.left = `${Math.random() * 100}%`;
-      particle.style.top = `${Math.random() * 100}%`;
-      particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
-      background.appendChild(particle);
+    function toggleInfo(id) {
+      const sections = document.querySelectorAll('.info-section');
+      sections.forEach(sec => {
+        sec.style.display = sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
+      });
     }
   </script>
 </body>
