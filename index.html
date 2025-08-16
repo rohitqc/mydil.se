@@ -194,6 +194,17 @@
     }
   </style>
 </head>
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.info-section');
+    sections.forEach(section => section.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add('active');
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
 
 <body>
   <img src="assets/Copilot_20250811_222427.png" alt="Logo" class="logo-top-right" />
