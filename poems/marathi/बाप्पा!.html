@@ -15,7 +15,8 @@
       font-family: 'Noto Sans Devanagari', sans-serif;
       background-color: #0f2027;
       color: #fdf6f0;
-      overflow: hidden;
+      overflow-x: hidden;
+      position: relative;
     }
 
     .poem-wrapper {
@@ -23,7 +24,7 @@
       max-width: 800px;
       margin: 60px auto;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.1);
+      background: url('assets/Copilot_20250812_092048.png') center/cover no-repeat;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 20px rgba(255,255,255,0.2);
       border-radius: 10px;
@@ -44,7 +45,7 @@
 
     .poem-text {
       font-size: 1.2rem;
-      line-height: 1.6;
+      line-height: 1.8;
       white-space: pre-wrap;
     }
 
@@ -67,7 +68,45 @@
       background-color: #002244;
     }
 
-    /* Background animation */
+    .logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 80px;
+      height: auto;
+      z-index: 3;
+    }
+
+    .signature {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.2rem;
+      color: #fdf6f0;
+      z-index: 3;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fdf6f0;
+    }
+
+    .footer a {
+      color: #fdf6f0;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #ffcc00;
+    }
+
     .background {
       position: fixed;
       top: 0;
@@ -119,6 +158,14 @@
         font-size: 0.9rem;
         padding: 6px 10px;
       }
+
+      .logo {
+        width: 60px;
+      }
+
+      .signature {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -126,25 +173,42 @@
 <body>
   <div class="background"></div>
 
+  <img src="assets/logo.png" alt="Logo" class="logo" />
+
   <a href="../shabd-majhe.html" class="back-link">← परत</a>
 
   <div class="poem-wrapper">
     <div class="poem-title-box">बाप्पा!</div>
 
     <div class="poem-text">
-      गणपती बाप्पा मोरया  
-      सुखकर्ता दुःखहर्ता  
-      लाडका देव माझा  
-      मनात घर केलेला  
-
-      दरवर्षी येतो आनंद घेऊन  
-      मोदकाचा गंध दरवळतो  
-      आरतीच्या सुरात भक्ती भरते  
-      आणि मन आनंदाने न्हालं जातं  
+      आतुरता या मनाला  
+      बाप्पा तुझ्या आगमनाची,  
+      उल्हास या मनामध्ये  
+      तयारी करताना तुझ्या स्वागताची,  
+      विघ्नहर्ता, दुःखहर्ता, तू सुखकर्ता  
+      ओढ आता फक्त  
+      मंगल मूर्तीच्या पदार्पणाची,  
+      ढोल-ताशा, टाळ- मृदुंग  
+      घंटा नाद समवेत,  
+      हे गणराया ऐक हाक या भक्तांची,  
+      सजली आता सारी सृष्टी,  
+      भरली थाळी तुझ्या आवडत्या मोदकानी,  
+      आरती करुनी घालितो लोटांगण,  
+      हे लंबोदर तुझ्या चरणी,  
+      एकच जल्लोष उठतो मनी,  
+      गणपती बाप्पा - मोरया !  
+      मंगल मूर्ती - मोरया !
     </div>
   </div>
 
-  <!-- Background particles -->
+  <div class="signature">— Rohit</div>
+
+  <div class="footer">
+    <a href="../about.html">About Me</a> |
+    <a href="../contact.html">Contact</a> |
+    <a href="../follow.html">Follow Me</a>
+  </div>
+
   <script>
     const background = document.querySelector('.background');
     for (let i = 0; i < 50; i++) {
@@ -158,11 +222,5 @@
       background.appendChild(particle);
     }
   </script>
-
-  <!-- Optional background music -->
-  <audio autoplay loop>
-    <source src="your-music-file.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
 </body>
 </html>
