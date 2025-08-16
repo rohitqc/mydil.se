@@ -153,3 +153,41 @@ ul li a:hover {
   height: auto;
   z-index: 10;
 }
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  height: auto;
+  z-index: 3;
+}
+
+.signature {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.2rem;
+  color: #fdf6f0;
+  z-index: 3;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fdf6f0;
+}
+
+.footer a {
+  color: #fdf6f0;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffcc00;
+}
