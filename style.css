@@ -117,10 +117,12 @@ ul li a:hover {
   text-decoration: underline;
 }
 
-/* ✅ Falling Animation (added from homepage) */
+/* ✅ Falling Animation */
 .falling {
   position: absolute;
   top: -50px;
+  width: 40px;
+  height: auto;
   animation: fall 10s linear infinite;
   pointer-events: none;
   z-index: 0;
