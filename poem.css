@@ -114,15 +114,51 @@ body {
 }
 
 /* -----------------------------------
-   Signature
+   Signature (Rainbow Animation)
 ----------------------------------- */
 .signature {
+  display: inline-block;
   text-align: right;
   font-family: 'Great Vibes', cursive;
   font-size: 1.2rem;
-  color: #2c3e50;
+  color: #fff; /* White text so colours pop */
   margin-top: 20px;
+  
+  /* Gradient background that will animate */
+  background: linear-gradient(
+    270deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 1400% 1400%; /* Larger for smoother animation */
+
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  /* Animation call */
+  animation: rainbowShift 8s ease infinite;
 }
+
+/* Keyframes for moving the gradient */
+@keyframes rainbowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 /* -----------------------------------
    Footer Links
