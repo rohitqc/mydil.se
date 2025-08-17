@@ -11,7 +11,7 @@ body {
 
 /* Background container */
 .poem-background {
-  background-image: url('../assets/Copilot_20250812_092048.png'); /* Replace with your actual background image */
+  background-image: url('assets/Copilot_20250812_092048.png'); /* Replace with your actual background image */
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -55,14 +55,14 @@ body {
 
 /* Title */
 .poem-title-box {
-  font-size: 42px; /* Increased font size */
-  font-family: 'Noto Sans Devanagari', sans-serif; /* Clean, non-cursive */
-  font-weight: bold; /* Make it bold */
-  color: darkblue; /* Dark blue text */
+  font-size: 42px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-weight: bold;
+  color: darkblue;
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 0 black; /* Black outline effect */
-  font-style: normal; /* Remove italics */
+  text-shadow: 1px 1px 0 black;
+  font-style: normal;
 }
 
 /* Poem text */
@@ -127,4 +127,3 @@ body {
   width: 32px;
   height: 32px;
 }
-
