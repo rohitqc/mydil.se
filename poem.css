@@ -127,3 +127,31 @@ body {
   width: 32px;
   height: 32px;
 }
+/* Back button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* Moved to top left */
+  font-size: 18px;
+  background-color: #007BFF; /* Blue box */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Logo */
+.logo {
+  width: 140px; /* Slightly larger */
+  height: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px; /* Moved to top right */
+  z-index: 10;
+}
