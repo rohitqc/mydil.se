@@ -215,3 +215,7 @@ ul li a:hover {
     font-size: 1rem;
   }
 }
+.poem-wrapper {
+  position: relative;
+  z-index: 1;
+}
