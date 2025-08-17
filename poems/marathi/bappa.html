@@ -6,20 +6,30 @@
   <title>बाप्पा!</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="../../poem.css"> <!-- ✅ Correct path to poem.css -->
+  <link rel="stylesheet" href="../../poem.css">
 </head>
 
 <body>
-  <img src="../../assets/Copilot_20250811_222427.png" alt="Logo" class="logo" />
+  <img
+    src="../../assets/Copilot_20250811_222427.png"
+    alt="Logo"
+    class="logo"
+  />
+
   <div class="back-button" onclick="history.back()">← back</div>
 
   <div class="poem-wrapper">
-    <div class="poem-background"> <!-- ✅ This div will now show the background -->
+    <!-- Centered title box -->
+    <h1 class="poem-title">बाप्पा!</h1>
+
+    <div class="poem-background">
       <div class="poem-text">
-        <!-- ✅ Poem lines with <br> for proper formatting -->
         आतुरता या मनाला<br>
         बाप्पा तुझ्या आगमनाची,<br>
         उल्हास या मनामध्ये<br>
@@ -35,8 +45,8 @@
         आरती करुनी घालितो लोटांगण,<br>
         हे लंबोदर तुझ्या चरणी,<br>
         एकच जल्लोष उठतो मनी,<br>
-        गणपती बाप्पा - मोरया !<br>
-        मंगल मूर्ती - मोरया !
+        गणपती बाप्पा – मोरया !<br>
+        मंगल मूर्ती – मोरया !
       </div>
     </div>
 
@@ -49,10 +59,13 @@
     <a onclick="toggleInfo('follow')">Follow Me</a>
   </div>
 
-  <!-- Info Sections -->
   <div id="about" class="info-section">
     <h2>About Me</h2>
-    <p>I’m Rohit, a science educator and poet blending emotional depth with visual storytelling. I write in Marathi, Hindi, and English to celebrate cultural identity and poetic beauty.</p>
+    <p>
+      I’m Rohit, a science educator and poet blending emotional depth with visual
+      storytelling. I write in Marathi, Hindi, and English to celebrate cultural
+      identity and poetic beauty.
+    </p>
   </div>
 
   <div id="contact" class="info-section">
@@ -64,15 +77,14 @@
   <div id="follow" class="info-section">
     <h2>Follow Me</h2>
     <div class="social-line">
-      <!-- ✅ Fixed image extensions (.png1 → .png) -->
       <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
-        <img src="../../assets/facebook-icon.png1" alt="Facebook" class="social-icon">
+        <img src="../../assets/facebook-icon.png" alt="Facebook" class="social-icon" />
       </a>
       <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
-        <img src="../../assets/instagram-icon.png1" alt="Instagram" class="social-icon">
+        <img src="../../assets/instagram-icon.png" alt="Instagram" class="social-icon" />
       </a>
       <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
-        <img src="../../assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon">
+        <img src="../../assets/linkedin-icon.png" alt="LinkedIn" class="social-icon" />
       </a>
     </div>
   </div>
@@ -81,7 +93,8 @@
     function toggleInfo(id) {
       const sections = document.querySelectorAll('.info-section');
       sections.forEach(sec => {
-        sec.style.display = sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
+        sec.style.display =
+          sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
       });
     }
   </script>
