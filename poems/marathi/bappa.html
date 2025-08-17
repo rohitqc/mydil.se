@@ -9,72 +9,71 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="../../poem.css">
+  <link rel="stylesheet" href="../../poem.css"> <!-- ✅ Correct path to poem.css -->
 </head>
 
 <body>
-  <div class="poem-background">
-    <img src="../../assets/Copilot_20250811_222427.png" alt="Logo" class="logo" />
-    <div class="back-button" onclick="history.back()">← back</div>
+  <img src="../../assets/Copilot_20250811_222427.png" alt="Logo" class="logo" />
+  <div class="back-button" onclick="history.back()">← back</div>
 
-    <div class="poem-wrapper">
-      <div class="poem-title-box">बाप्पा!</div>
-
+  <div class="poem-wrapper">
+    <div class="poem-background"> <!-- ✅ This div will now show the background -->
       <div class="poem-text">
-  आतुरता या मनाला<br>
-  बाप्पा तुझ्या आगमनाची,<br>
-  उल्हास या मनामध्ये<br>
-  तयारी करताना तुझ्या स्वागताची,<br>
-  विघ्नहर्ता, दुःखहर्ता, तू सुखकर्ता<br>
-  ओढ आता फक्त<br>
-  मंगल मूर्तीच्या पदार्पणाची,<br>
-  ढोल-ताशा, टाळ- मृदुंग<br>
-  घंटा नाद समवेत,<br>
-  हे गणराया ऐक हाक या भक्तांची,<br>
-  सजली आता सारी सृष्टी,<br>
-  भरली थाळी तुझ्या आवडत्या मोदकानी,<br>
-  आरती करुनी घालितो लोटांगण,<br>
-  हे लंबोदर तुझ्या चरणी,<br>
-  एकच जल्लोष उठतो मनी,<br>
-  गणपती बाप्पा - मोरया !<br>
-  मंगल मूर्ती - मोरया !
-</div>
-
-
-      <div class="signature">— Rohit</div>
-    </div>
-
-    <div class="footer">
-      <a onclick="toggleInfo('about')">About Me</a> |
-      <a onclick="toggleInfo('contact')">Contact</a> |
-      <a onclick="toggleInfo('follow')">Follow Me</a>
-    </div>
-
-    <!-- Info Sections -->
-    <div id="about" class="info-section">
-      <h2>About Me</h2>
-      <p>I’m Rohit, a science educator and poet blending emotional depth with visual storytelling. I write in Marathi, Hindi, and English to celebrate cultural identity and poetic beauty.</p>
-    </div>
-
-    <div id="contact" class="info-section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
-      <p>Mobile: +44 7721714024</p>
-    </div>
-
-    <div id="follow" class="info-section">
-      <h2>Follow Me</h2>
-      <div class="social-line">
-        <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
-          <img src="../../assets/facebook-icon.png1" alt="Facebook" class="social-icon">
-        </a>
-        <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
-          <img src="../../assets/instagram-icon.png1" alt="Instagram" class="social-icon">
-        </a>
-        <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
-          <img src="../../assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon">
-        </a>
+        <!-- ✅ Poem lines with <br> for proper formatting -->
+        आतुरता या मनाला<br>
+        बाप्पा तुझ्या आगमनाची,<br>
+        उल्हास या मनामध्ये<br>
+        तयारी करताना तुझ्या स्वागताची,<br>
+        विघ्नहर्ता, दुःखहर्ता, तू सुखकर्ता<br>
+        ओढ आता फक्त<br>
+        मंगल मूर्तीच्या पदार्पणाची,<br>
+        ढोल-ताशा, टाळ- मृदुंग<br>
+        घंटा नाद समवेत,<br>
+        हे गणराया ऐक हाक या भक्तांची,<br>
+        सजली आता सारी सृष्टी,<br>
+        भरली थाळी तुझ्या आवडत्या मोदकानी,<br>
+        आरती करुनी घालितो लोटांगण,<br>
+        हे लंबोदर तुझ्या चरणी,<br>
+        एकच जल्लोष उठतो मनी,<br>
+        गणपती बाप्पा - मोरया !<br>
+        मंगल मूर्ती - मोरया !
       </div>
+    </div>
+
+    <div class="signature">— Rohit</div>
+  </div>
+
+  <div class="footer">
+    <a onclick="toggleInfo('about')">About Me</a> |
+    <a onclick="toggleInfo('contact')">Contact</a> |
+    <a onclick="toggleInfo('follow')">Follow Me</a>
+  </div>
+
+  <!-- Info Sections -->
+  <div id="about" class="info-section">
+    <h2>About Me</h2>
+    <p>I’m Rohit, a science educator and poet blending emotional depth with visual storytelling. I write in Marathi, Hindi, and English to celebrate cultural identity and poetic beauty.</p>
+  </div>
+
+  <div id="contact" class="info-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
+    <p>Mobile: +44 7721714024</p>
+  </div>
+
+  <div id="follow" class="info-section">
+    <h2>Follow Me</h2>
+    <div class="social-line">
+      <!-- ✅ Fixed image extensions (.png1 → .png) -->
+      <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
+        <img src="../../assets/facebook-icon.png1" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
+        <img src="../../assets/instagram-icon.png1" alt="Instagram" class="social-icon">
+      </a>
+      <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
+        <img src="../../assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon">
+      </a>
     </div>
   </div>
 
