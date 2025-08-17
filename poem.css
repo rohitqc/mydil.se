@@ -1,1 +1,127 @@
+/* poem.css */
+
+/* Reset and base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  background-color: #fdf6e3;
+  color: #333;
+}
+
+/* Background container */
+.poem-background {
+  background-image: url('../assets/ganpati-bg.jpg'); /* Replace with your actual background image */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+/* Back button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Poem wrapper */
+.poem-wrapper {
+  max-width: 700px;
+  margin: 100px auto 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Title */
+.poem-title-box {
+  font-size: 36px;
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #b30000;
+}
+
+/* Poem text */
+.poem-text {
+  font-size: 20px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* Signature */
+.signature {
+  text-align: right;
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Footer links */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #444;
+}
+
+.footer a {
+  cursor: pointer;
+  color: #0066cc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Info sections */
+.info-section {
+  display: none;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.info-section h2 {
+  margin-top: 0;
+  color: #b30000;
+}
+
+/* Social icons */
+.social-line {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+}
 
