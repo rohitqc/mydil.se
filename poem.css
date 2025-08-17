@@ -41,9 +41,9 @@ body {
 }
 
 /* -----------------------------------
-   Poem Content with Fade-In
+   Poem Wrapper
 ----------------------------------- */
-.poem-content {
+.poem-wrapper {
   position: relative;
   z-index: 1;
   max-width: 800px;
@@ -186,36 +186,4 @@ ul li a:hover {
 }
 
 @keyframes fall {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-}
-
-/* -----------------------------------
-   Responsive Styles
------------------------------------ */
-@media (max-width: 600px) {
-  .poem-content {
-    padding: 0 20px;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  .logo {
-    width: 100px;
-  }
-
-  .back-button {
-    font-size: 0.9em;
-    padding: 8px 12px;
-  }
-
-  .signature {
-    font-size: 1rem;
-  }
-}
-.poem-wrapper {
-  position: relative;
-  z-index: 1;
-}
+  0% { transform: translateY(0) rotate(0
