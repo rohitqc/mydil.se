@@ -10,32 +10,31 @@ body {
 }
 
 /* -----------------------------------
-   Poem Title Box
+   Poem Title (Centered in Box)
 ----------------------------------- */
 .poem-title {
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.4); /* ✅ Faint background */
-  padding: 20px;
+  color: #222;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px 30px;
   margin: 40px auto 20px;
-  max-width: 600px;
+  max-width: 700px;
   border-radius: 12px;
   font-family: 'Noto Sans Devanagari', sans-serif;
 }
 
 /* -----------------------------------
-   Poem Background
+   Background Container
 ----------------------------------- */
 .poem-background {
-  background-image: url('assets/Copilot_20250812_092048.png'); /* ✅ Correct path */
+  background-image: url('assets/Copilot_20250812_092048.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 40px;
   border-radius: 12px;
-  min-height: 600px;
 }
 
 /* -----------------------------------
@@ -52,7 +51,7 @@ body {
 }
 
 /* -----------------------------------
-   Poem Wrapper
+   Poem Wrapper & Fade-in
 ----------------------------------- */
 .poem-wrapper {
   position: relative;
@@ -63,8 +62,14 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* -----------------------------------
@@ -91,7 +96,7 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: #fff;
   padding: 10px 16px;
   border-radius: 6px;
@@ -151,7 +156,7 @@ body {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   font-size: 1rem;
   line-height: 1.6;
@@ -169,3 +174,59 @@ body {
 }
 
 .social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* -----------------------------------
+   Typography & Lists
+----------------------------------- */
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #006699;
+  font-size: 1.2em;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------
+   Falling Animation (Optional)
+----------------------------------- */
+.falling {
+  position: absolute;
+  top: -50px;
+  width: 40px;
+  height: auto;
+  animation: fall 10s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
