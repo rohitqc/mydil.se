@@ -112,22 +112,21 @@ body {
   background-color: #0056b3;
   transform: scale(1.05);
 }
-
-/* -----------------------------------
-   Signature (Rainbow Animation, Right Aligned, Bold/Darker Text)
------------------------------------ */
+/*signature*/
 .signature {
   display: inline-block;
   font-family: 'Great Vibes', cursive;
-  font-size: 1.3rem;                   /* a touch larger */
-  font-weight: 600;                    /* semi‑bold weight */
-  color: #222;                         /* deep grey for better contrast */
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
   margin-top: 20px;
 
-  /* Align to right */
-  float: right;
+  /* Right align in its parent */
+  text-align: right;
+  
+  /* Make parent span full width */
+  width: 100%;
 
-  /* Gradient background animation */
   background: linear-gradient(
     270deg,
     red,
@@ -143,15 +142,9 @@ body {
   border-radius: 8px;
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
   animation: rainbowShift 8s ease infinite;
 }
 
-@keyframes rainbowShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 /* -----------------------------------
    Footer Links
