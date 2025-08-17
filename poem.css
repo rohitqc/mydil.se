@@ -10,22 +10,45 @@ body {
 }
 
 /* -----------------------------------
-   Background Container with Animation
+   Poem Title Box
+----------------------------------- */
+.poem-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4); /* ✅ Faint background */
+  padding: 20px;
+  margin: 40px auto 20px;
+  max-width: 600px;
+  border-radius: 12px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* -----------------------------------
+   Poem Background
 ----------------------------------- */
 .poem-background {
-  background-image: url('../assets/Copilot_20250812_092048.png'); /* ✅ Corrected path */
+  background-image: url('assets/Copilot_20250812_092048.png'); /* ✅ Correct path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 40px;
   border-radius: 12px;
-  animation: zoomBackground 20s ease-in-out infinite;
+  min-height: 600px;
 }
 
-@keyframes zoomBackground {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+/* -----------------------------------
+   Poem Text Styling
+----------------------------------- */
+.poem-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 /* -----------------------------------
@@ -42,19 +65,6 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* -----------------------------------
-   Poem Text Styling
------------------------------------ */
-.poem-text {
-  font-family: 'Noto Sans Devanagari', sans-serif;
-  font-size: 1.2rem;
-  color: #fff;
-  line-height: 2;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  border-radius: 8px;
 }
 
 /* -----------------------------------
@@ -159,58 +169,3 @@ body {
 }
 
 .social-icon {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.1);
-}
-
-/* -----------------------------------
-   Typography
------------------------------------ */
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #2c3e50;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-ul li a {
-  text-decoration: none;
-  color: #006699;
-  font-size: 1.2em;
-}
-
-ul li a:hover {
-  text-decoration: underline;
-}
-
-/* -----------------------------------
-   Falling Animation (Optional)
------------------------------------ */
-.falling {
-  position: absolute;
-  top: -50px;
-  width: 40px;
-  height: auto;
-  animation: fall 10s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes fall {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(100vh) rotate(360deg); }
-}
