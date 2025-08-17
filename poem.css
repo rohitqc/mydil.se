@@ -13,10 +13,13 @@ body {
    Background Container with Animation
 ----------------------------------- */
 .poem-background {
-  background-image: url('assets/Copilot_20250812_092048.png');
+  background-image: url('../assets/Copilot_20250812_092048.png'); /* ✅ Corrected path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 40px;
+  border-radius: 12px;
+  animation: zoomBackground 20s ease-in-out infinite;
 }
 
 @keyframes zoomBackground {
@@ -39,6 +42,19 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* -----------------------------------
+   Poem Text Styling
+----------------------------------- */
+.poem-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
 }
 
 /* -----------------------------------
