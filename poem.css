@@ -112,7 +112,9 @@ body {
   background-color: #0056b3;
   transform: scale(1.05);
 }
-/*signature*/
+/* -----------------------------------
+   Signature
+----------------------------------- */
 .signature {
   display: inline-block;
   font-family: 'Great Vibes', cursive;
@@ -120,11 +122,7 @@ body {
   font-weight: 600;
   color: #222;
   margin-top: 20px;
-
-  /* Right align in its parent */
   text-align: right;
-  
-  /* Make parent span full width */
   width: 100%;
 
   background: linear-gradient(
@@ -140,11 +138,43 @@ body {
   background-size: 1400% 1400%;
   padding: 6px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  animation: rainbowShift 8s ease infinite;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: rainbowShift 8s linear infinite;
 }
 
+/* -----------------------------------
+   Rainbow Gradient Animation
+----------------------------------- */
+@keyframes rainbowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  12.5% {
+    background-position: 20% 50%;
+  }
+  25% {
+    background-position: 40% 50%;
+  }
+  37.5% {
+    background-position: 60% 50%;
+  }
+  50% {
+    background-position: 80% 50%;
+  }
+  62.5% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 80% 50%;
+  }
+  87.5% {
+    background-position: 40% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 /* -----------------------------------
    Footer Links
