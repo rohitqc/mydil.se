@@ -17,12 +17,28 @@ body {
   font-size: 6rem;
   font-weight: bold;
   color: #222;
-  background-color: rgba(255, 255, 255, 0.7);
   padding: 20px 30px;
   margin: 40px auto 20px;
   max-width: 700px;
   border-radius: 12px;
   font-family: 'Noto Sans Devanagari', sans-serif;
+
+  /* Animated background */
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 1400% 1400%;
+  animation: rainbowTitleShift 1s linear infinite;
+}
+
+/* -----------------------------------
+   Rainbow Animation for Title
+----------------------------------- */
+@keyframes rainbowTitleShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 /* -----------------------------------
