@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>सपने जो देखे थे</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../../poem.css">
+</head>
+
+<body>
+  <img
+    src="../../assets/Copilot_20250811_222427.png"
+    alt="Logo"
+    class="logo"
+  />
+
+  <div class="back-button" onclick="history.back()">← back</div>
+
+  <div class="poem-wrapper">
+    <h1 class="poem-title">सपने जो देखे थे</h1>
+
+    <div class="poem-background">
+      <div class="poem-text">
+सपने जो देखे थे <br>
+कैद आज वो हो गए। <br>
+ऊंची उड़ान भरने से पहले<br>
+ मौसम के हालात कुछ बीघड़ गए।<br>
+
+सोच तो जहां पार कर चुकी थी, <br>
+पर हम सवालों में उलझकर रह गए। <br>
+मंजिल बस सामने ही थी, <br>
+पर रास्ते ही जहां से खो गए।<br>
+
+पूरी शिद्दत से चाहा तो था, <br>
+पर कायनात थम गई।<br>
+मन तो भटकता रहता है,<br>
+पर ये रूह अब कैद हो गई।<br>
+      </div>
+    </div>
+
+    <div class="signature">— Rohit</div>
+  </div>
+
+  <div class="footer">
+    <a onclick="toggleInfo('about')">About Me</a> |
+    <a onclick="toggleInfo('contact')">Contact</a> |
+    <a onclick="toggleInfo('follow')">Follow Me</a>
+  </div>
+
+  <div id="about" class="info-section">
+    <h2>About Me</h2>
+    <p>
+      I’m Rohit, a science educator and poet blending emotional depth with visual
+      storytelling. I write in Marathi, Hindi, and English to celebrate cultural
+      identity and poetic beauty.
+    </p>
+  </div>
+
+  <div id="contact" class="info-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
+    <p>Mobile: +44 7721714024</p>
+  </div>
+
+  <div id="follow" class="info-section">
+    <h2>Follow Me</h2>
+    <div class="social-line">
+      <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
+        <img src="../../assets/facebook-icon.png1" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
+        <img src="../../assets/instagram-icon.png1" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
+        <img src="../../assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(id) {
+      const sections = document.querySelectorAll('.info-section');
+      sections.forEach(sec => {
+        sec.style.display =
+          sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
