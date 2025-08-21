@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>एक पल जब में सिर्फ अपने साथ था</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../../poem.css">
+</head>
+
+<body>
+  <img
+    src="../../assets/Copilot_20250811_222427.png"
+    alt="Logo"
+    class="logo"
+  />
+
+  <div class="back-button" onclick="history.back()">← back</div>
+
+  <div class="poem-wrapper">
+    <h1 class="poem-title">एक पल जब में सिर्फ अपने साथ था</h1>
+
+    <div class="poem-background">
+      <div class="poem-text">
+खुले आसमान के नीचे, <br>
+चारो और सन्नाटा था, <br>
+बस एक हल्की सी धुन थी,<br> 
+और मेरे साथ सिर्फ मैं था। <br>
+
+होले से बहती हवा थी, <br>
+चारो और अंधेरा था और रोशनी सिर्फ चांद की थी, <br>
+धड़कनों की आवाज मुझे अकेले पन एहसास दिला रही थी।<br>
+
+सब कुछ जैसे ठहर सा गया था, <br>
+आवाज सिर्फ मेरे मन की थी, <br>
+सोचना क्या है पता नहीं था, <br>
+बस मुझे अकेला रहना था।<br>
+
+आंखे जब बंद की तब मैंने अपने आप को देखा,<br> 
+पहली बार अपने साथ मैंने बात की थी, <br>
+अकेले पन का एक खूबसूरत एहसास मुझे <br>
+उस पल पहली बार हुआ था। <br>
+
+बेचैन मन खिल सा गया था,<br> 
+जिंदगी फिर से नई सी लगने लगी थी,<br> 
+शब्दों में बयां तो नहीं कर सकता मगर <br>
+वो पल जब मै सिर्फ अपने साथ था, <br>
+मेरी जिंदगी का सबसे हसीन पल था।<br>
+      </div>
+    </div>
+
+    <div class="signature">— Rohit</div>
+  </div>
+
+  <div class="footer">
+    <a onclick="toggleInfo('about')">About Me</a> |
+    <a onclick="toggleInfo('contact')">Contact</a> |
+    <a onclick="toggleInfo('follow')">Follow Me</a>
+  </div>
+
+  <div id="about" class="info-section">
+    <h2>About Me</h2>
+    <p>
+      I’m Rohit, a science educator and poet blending emotional depth with visual
+      storytelling. I write in Marathi, Hindi, and English to celebrate cultural
+      identity and poetic beauty.
+    </p>
+  </div>
+
+  <div id="contact" class="info-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
+    <p>Mobile: +44 7721714024</p>
+  </div>
+
+  <div id="follow" class="info-section">
+    <h2>Follow Me</h2>
+    <div class="social-line">
+      <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
+        <img src="../../assets/facebook-icon.png1" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
+        <img src="../../assets/instagram-icon.png1" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
+        <img src="../../assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(id) {
+      const sections = document.querySelectorAll('.info-section');
+      sections.forEach(sec => {
+        sec.style.display =
+          sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
