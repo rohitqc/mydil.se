@@ -43,16 +43,23 @@ body {
 }
 
 /* -----------------------------------
-   Background Container
+   Background Container (Corrected)
 ----------------------------------- */
 .poem-background {
-  background-image: url('/assets/Copilot_20250812_092048.png'); /* ✅ Absolute path */
+  background-image: url('/assets/Copilot_20250812_092048.png'); /* ✅ Confirm path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 40px;
   border-radius: 12px;
+
+  /* ✅ Ensure visibility */
+  min-height: 400px;
+
+  /* Optional: fallback background color */
+  background-color: #222;
 }
+
 
 /* -----------------------------------
    Poem Text Styling
