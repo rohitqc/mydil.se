@@ -55,9 +55,6 @@ body {
 
   /* ✅ Ensure visibility */
   min-height: 400px;
-
-  /* Optional: fallback background color */
-  background-color: #222;
 }
 
 
