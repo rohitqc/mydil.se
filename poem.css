@@ -46,7 +46,7 @@ body {
    Background Container (Corrected)
 ----------------------------------- */
 .poem-background {
-  background-image: url('/assets/Copilot_20250812_092048.png'); /* ✅ Confirm path */
+  background-image: url('assets/Copilot_20250812_092048.png'); /* ✅ Confirm path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
