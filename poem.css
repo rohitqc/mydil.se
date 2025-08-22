@@ -123,12 +123,25 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 1400% 1400%;
+  animation: rainbowTitleShift 20s linear infinite;
 }
 
 .back-button:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
+@keyframes rainbowTitleShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 /* -----------------------------------
    Signature
 ----------------------------------- */
