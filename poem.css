@@ -1,4 +1,11 @@
 /* -----------------------------------
+   Font Imports (Add to HTML <head>)
+----------------------------------- */
+/* 
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+*/
+
+/* -----------------------------------
    Base Styles
 ----------------------------------- */
 body {
@@ -13,15 +20,9 @@ body {
    Poem Title (Centered in Box)
 ----------------------------------- */
 @keyframes rainbowTitleShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .poem-title {
@@ -35,17 +36,17 @@ body {
   max-width: 700px;
   border-radius: 12px;
   font-family: 'Noto Sans Devanagari', sans-serif;
-
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 1400% 1400%;
   animation: rainbowTitleShift 20s linear infinite;
+  will-change: background-position;
 }
 
 /* -----------------------------------
    Background Container
 ----------------------------------- */
 .poem-background {
-  background-image: url('assets/Copilot_20250812_092048.png');
+  background-image: url('/assets/Copilot_20250812_092048.png'); /* ✅ Absolute path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -99,7 +100,7 @@ body {
   height: auto;
   z-index: 1000;
   transition: transform 0.3s ease;
-  border-radius: 5%; /* 🎯 Perfectly round corners */
+  border-radius: 5%;
 }
 
 .logo:hover {
@@ -129,6 +130,7 @@ body {
   background-color: #0056b3;
   transform: scale(1.05);
 }
+
 /* -----------------------------------
    Signature
 ----------------------------------- */
@@ -141,56 +143,29 @@ body {
   margin-top: 20px;
   text-align: right;
   width: 100%;
-
-  background: linear-gradient(
-    270deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 1400% 1400%;
   padding: 6px 12px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   animation: rainbowShift 8s linear infinite;
+  will-change: background-position;
 }
 
 /* -----------------------------------
    Rainbow Gradient Animation
 ----------------------------------- */
 @keyframes rainbowShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  12.5% {
-    background-position: 20% 50%;
-  }
-  25% {
-    background-position: 40% 50%;
-  }
-  37.5% {
-    background-position: 60% 50%;
-  }
-  50% {
-    background-position: 80% 50%;
-  }
-  62.5% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 80% 50%;
-  }
-  87.5% {
-    background-position: 40% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  12.5% { background-position: 20% 50%; }
+  25% { background-position: 40% 50%; }
+  37.5% { background-position: 60% 50%; }
+  50% { background-position: 80% 50%; }
+  62.5% { background-position: 100% 50%; }
+  75% { background-position: 80% 50%; }
+  87.5% { background-position: 40% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* -----------------------------------
@@ -218,7 +193,7 @@ body {
 }
 
 /* -----------------------------------
-   Info Sections
+   Info Sections (Toggleable)
 ----------------------------------- */
 .info-section {
   display: none;
@@ -229,6 +204,10 @@ body {
   border-radius: 10px;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.info-section.visible {
+  display: block;
 }
 
 /* -----------------------------------
