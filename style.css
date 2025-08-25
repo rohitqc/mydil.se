@@ -99,9 +99,9 @@ body {
    Signature
 ----------------------------------- */
 .signature {
-  text-align: right;
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.2rem;
+  text-align: center;
+  font-family: 'Great Vibes', cursive, bold;
+  font-size: 2.4rem;
   color: #2c3e50;
   margin-top: 20px;
 }
