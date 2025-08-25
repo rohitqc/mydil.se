@@ -36,9 +36,9 @@ body {
   max-width: 700px;
   border-radius: 12px;
   font-family: 'Noto Sans Devanagari', sans-serif;
-  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background: linear-gradient(270deg, blue, indigo, violet);
   background-size: 1400% 1400%;
-  animation: rainbowTitleShift 20s linear infinite;
+  animation: rainbowTitleShift 30s linear infinite;
   will-change: background-position;
 }
 
