@@ -104,28 +104,18 @@ To live and survive in the life like a river.<br>
       });
     }
   </script>
-  <!-- Language Toggle -->
-<div id="language-toggle">
-  <label for="lang">🌍 Language:</label>
-  <select id="lang" onchange="changeLang(this.value)">
-    <option value="en">English</option>
-    <option value="hi">हिन्दी</option>
-    <option value="mr">मराठी</option>
-  </select>
+<div class="comment-section">
+  <h3>💬 Leave a Comment</h3>
+  <form id="commentForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="comment" placeholder="Your Comment" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="commentStatus"></div>
+  <div id="commentDisplay"></div>
 </div>
 
-<!-- Comment Section -->
-<div class="commentbox"></div>
-<script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
-<script>
-  commentBox('YOUR_PROJECT_ID', { className: 'commentbox' });
-</script>
-
-<!-- Bottom Bar -->
-<div class="bottom-bar">
-  <button class="follow-btn">🌟 Follow Me</button>
-  <a href="#commentbox" class="comment-tab">💬 Leave a Comment</a>
-</div>
 
 </body>
 </html>
