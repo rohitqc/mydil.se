@@ -277,3 +277,50 @@ ul li a:hover {
     transform: translateY(100vh) rotate(360deg);
   }
 }
+/* 🌸 Comment Section Styling */
+.commentbox {
+  margin-top: 2em;
+  padding: 1em;
+  background: #fef6ff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(200, 150, 255, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🌍 Language Toggle */
+#language-toggle {
+  margin-top: 1em;
+  text-align: right;
+  font-size: 0.9em;
+}
+#language-toggle select {
+  padding: 0.3em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* 📎 Bottom Bar */
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3em;
+  padding: 1em;
+  background: linear-gradient(to right, #ffe0f0, #e0f7ff);
+  border-top: 2px solid #ccc;
+  border-radius: 0 0 10px 10px;
+}
+.follow-btn {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.comment-tab {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
