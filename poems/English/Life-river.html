@@ -104,57 +104,6 @@ To live and survive in the life like a river.<br>
       });
     }
   </script>
-<div class="comment-section">
-  <h3>💬 Leave a Comment</h3>
-  <form id="commentForm">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="comment" placeholder="Your Comment" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
-  <div id="commentStatus"></div>
-  <div id="commentDisplay"></div>
-</div>
-<!-- Your existing HTML content -->
-
-<!-- Comment Form Script -->
-<script>
-  const form = document.getElementById('commentForm');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      comment: form.comment.value
-    };
-    fetch('YOUR_WEB_APP_URL', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-    .then(res => res.text())
-    .then(msg => {
-      document.getElementById('commentStatus').innerText = "Comment submitted!";
-      form.reset();
-      loadComments();
-    });
-  });
-
-  function loadComments() {
-    fetch('YOUR_WEB_APP_URL')
-      .then(res => res.json())
-      .then(data => {
-        const display = document.getElementById('commentDisplay');
-        display.innerHTML = data.map(c => `
-          <div class="comment">
-            <strong>${c.name}</strong> <em>${new Date(c.date).toLocaleString()}</em><br>
-            ${c.comment}
-          </div>
-        `).join('');
-      });
-  }
-
-  window.onload = loadComments;
-</script>
 
 </body>
 </html>
