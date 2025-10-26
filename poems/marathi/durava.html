@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>मला आवडतं म्हणून</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../../poem.css">
+</head>
+
+<body>
+  <img
+    src="../../assets/Copilot_20250811_222427.png"
+    alt="Logo"
+    class="logo"
+  />
+
+  <div class="back-button" onclick="history.back()">← back</div>
+
+  <div class="poem-wrapper">
+    <!-- Centered title box -->
+    <h1 class="poem-title">का बरं हा दुरावा...?</h1>
+
+    <div class="poem-background">
+      <div class="poem-text">
+का बरं हा दुरावा...?<br>
+सोबत होतीस तू माझ्या,<br>
+स्वप्नात की वास्तव्यात,<br>
+मज संभ्रमात सोडून,<br>
+गेलीस तू फार दूर आता.<br>
+
+मनाचे बोल मज सांगुनी,<br>
+मन मोकळं करावयास,<br>
+वेळेत वेळ काढून,<br>
+मला भेटायचीस,<br>
+सोबत होतीस तेव्हा,<br>
+मला आपलसं समजायचीस.<br>
+
+कुठे शोधू त्या सहवासाला,<br>
+कसा विसरू त्या क्षणांना,<br>
+सोबत होतीस तेव्हा,<br>
+आठवणीत आहेस आज माझ्या,<br>
+
+न बोलून काही,<br>
+बोललीस तू खूप काही,<br>
+विसरून नाही जाणार,<br>
+पण एकदा बोल तर खरं...<br>
+
+पुन्हा एकदा मन मोकळं कर तर खरं,<br>
+जोडून मन माझ्या मनाशी,<br>
+पुन्हा एकदा तेच प्रश्न विचार तर खरं...<br>
+      </div>
+      <div class="signature">— Rohit</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a onclick="toggleInfo('about')">About Me</a> |
+    <a onclick="toggleInfo('contact')">Contact</a> |
+    <a onclick="toggleInfo('follow')">Follow Me</a>
+  </div>
+
+  <div id="about" class="info-section">
+    <h2>About Me</h2>
+    <p>
+      I’m Rohit, a science educator and poet blending emotional depth with visual
+      storytelling. I write in Marathi, Hindi, and English to celebrate cultural
+      identity and poetic beauty.
+    </p>
+  </div>
+
+  <div id="contact" class="info-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
+    
+  </div>
+
+  <div id="follow" class="info-section">
+    <h2>Follow Me</h2>
+    <div class="social-line">
+      <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
+        <img src="../../assets/facebook-icon.png1" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
+        <img src="../../assets/instagram-icon.png1" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
+        <img src="../../assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(id) {
+      const sections = document.querySelectorAll('.info-section');
+      sections.forEach(sec => {
+        sec.style.display =
+          sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
