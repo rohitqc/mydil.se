@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let it go...</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Great+Vibes&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="../../poem.css">
+</head>
+
+<body>
+  <img
+    src="../../assets/Copilot_20250811_222427.png"
+    alt="Logo"
+    class="logo"
+  />
+
+  <div class="back-button" onclick="history.back()">← Back</div>
+
+  <div class="poem-wrapper">
+    <h1 class="poem-title">The Walk- I have done it...</h1>
+
+    <div class="poem-background">
+      <div class="poem-text">
+Miles of smiles<br>
+Walking restless<br>
+Talking to strangers<br> 
+I have done it...<br>
+From busy life<br>
+Walk of mindfulness<br> 
+A bit of for myself<br> 
+I have done it...<br>
+Yes it was hard<br>
+It was rough<br>
+Through meadows <br>
+Through puddles<br>
+Through mountains<br>
+Crossing rivers<br>
+I have done it ...<br>
+Through the rough weather,<br>
+Winds blowing at 75miles and hour<br>
+Through the rain showers<br>
+And cold breeze of 1 degree Celsius<br>
+Passing all the hurdles<br>
+The long memorable walk of 6 hours<br>
+I have done it...<br>
+
+      </div>
+          <div class="signature">— Rohit</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a onclick="toggleInfo('about')">About Me</a> |
+    <a onclick="toggleInfo('contact')">Contact</a> |
+    <a onclick="toggleInfo('follow')">Follow Me</a>
+  </div>
+
+  <div id="about" class="info-section">
+    <h2>About Me</h2>
+    <p>
+      I’m Rohit, a science educator and poet blending emotional depth with visual
+      storytelling. I write in Marathi, Hindi, and English to celebrate cultural
+      identity and poetic beauty.
+    </p>
+  </div>
+
+  <div id="contact" class="info-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:rohitphy79@gmail.com">rohitphy79@gmail.com</a></p>
+    
+  </div>
+
+  <div id="follow" class="info-section">
+    <h2>Follow Me</h2>
+    <div class="social-line">
+      <a href="https://www.facebook.com/ilphy79/" target="_blank" title="Facebook">
+        <img src="../../assets/facebook-icon.png1" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/ilphy79_rohit/" target="_blank" title="Instagram">
+        <img src="../../assets/instagram-icon.png1" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/ilphy79/" target="_blank" title="LinkedIn">
+        <img src="../../assets/linkedin-icon.png1" alt="LinkedIn" class="social-icon" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(id) {
+      const sections = document.querySelectorAll('.info-section');
+      sections.forEach(sec => {
+        sec.style.display =
+          sec.id === id && sec.style.display !== 'block' ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
